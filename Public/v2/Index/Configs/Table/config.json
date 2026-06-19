@@ -38,7 +38,8 @@
             "verticalConfig": {},
             "tableConfig": {},
             "isVisible": true,
-            "tableFooterDataListShow": true
+            "tableFooterDataListShow": true,
+            "dataListSource": "StockItemName"
         },
         {
             "columnName": "StockGstApplicable",

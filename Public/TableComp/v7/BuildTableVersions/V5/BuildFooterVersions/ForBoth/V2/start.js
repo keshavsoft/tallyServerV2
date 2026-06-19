@@ -9,7 +9,7 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
     inServices, inEndPoints, inTableBody, inShowSerial, inShowActions,
     inData, inShowFooterRows = false
 }) => {
-    debugger;
+    // debugger;
 
     const localVisibleColumns = inVisibleColumnsConfig
 

@@ -89,7 +89,8 @@ const startFunc = ({
             inShowBalance: showBalance,
             inShowTotalsForSearch: showTotalsForSearch,
             inShowBalanceForSearch: showBalanceForSearch,
-            inShowFooterRows: showFooterRows
+            inShowFooterRows: showFooterRows,
+            inShowDataList: showDataList
         });
     };
 
