@@ -15,7 +15,7 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
 
     const localHandleSave = ({ dataFromDom, inCurrentTarget }) => {
         const objectToSave = { ...dataFromDom, ...inDefaultRow };
-        console.log("objectToSave : ", objectToSave, inServices);
+        // console.log("objectToSave : ", objectToSave, inServices);
 
         createHandleSave({
             inServices, inEndPoints, inPayload: objectToSave,

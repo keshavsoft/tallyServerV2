@@ -25,7 +25,8 @@
             "showFooterRows": true,
             "showDataList": true,
             "showSave": true,
-            "showActions": true
+            "showActions": true,
+            "showSerial": true
         }
     },
     "columnsConfig": [

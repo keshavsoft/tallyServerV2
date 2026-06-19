@@ -2,11 +2,12 @@ import { buildHeaderRow } from "../builders/buildHeaderRow.js";
 import { buildDataListContainer } from "../builders/buildDataListContainer.js";
 // import { buildTableShell } from "../builders/buildTableShell.js";
 
-import buildTableShell from "../BuilderVersions/V1/buildTableShell.js";
+// import buildTableShell from "../BuilderVersions/V1/buildTableShell.js";
+import buildTableShell from "../BuilderVersions/V2/buildTableShell.js";
 
 export const buildFullUI = ({ containerEl, inTableName, inIsDataListNeeded = true,
     inIsTableNeeded = true, inIsShowHeaderRow = false,
-    inUiClasses, clearOld = true }) => {
+    inUiClasses, clearOld = true, inShowSerial, inShowActions }) => {
 
     const root = containerEl;
     root.className = "max-w-6xl mx-auto p-2";
@@ -22,7 +23,10 @@ export const buildFullUI = ({ containerEl, inTableName, inIsDataListNeeded = tru
     };
 
     if (inIsTableNeeded) {
-        const { wrapper } = buildTableShell({ inTableClassName: inUiClasses?.table?.tableClass });
+        const { wrapper } = buildTableShell({
+            inTableClassName: inUiClasses?.table?.tableClass,
+            inShowSerial, inShowActions
+        });
 
         children.push(wrapper);
     };

@@ -54,7 +54,10 @@ const startFunc = ({
     buildFullUI({
         containerEl: containerEl,
         inTableName: inConfig.tableName,
-        inIsShowHeaderRow: showSearch
+        inIsShowHeaderRow: showSearch,
+        inShowSerial: showSerial,
+        inSerialWidth: serialWidth,
+        inShowActions: showActions
     });
 
     buildHeader({
@@ -96,7 +99,9 @@ const startFunc = ({
             inShowDataList: showDataList,
             inShowSave: showSave,
             inServices: services,
-            inEndPoints: endPoints
+            inEndPoints: endPoints,
+            inDataStore: dataStore,
+            inTableBody: tableBody
         });
     };
 

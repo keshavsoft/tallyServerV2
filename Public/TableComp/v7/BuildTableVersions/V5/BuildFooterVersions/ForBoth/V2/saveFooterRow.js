@@ -7,7 +7,7 @@
 
 // import { buildBody } from "../../../BuildBodyVersions/V4/start.js";
 
-// import afterMutation from "../../../AfterMutation/V3/index.js";
+import afterMutation from "../../../AfterMutation/V4/index.js";
 
 const saveFooterRow = async ({
     inDataStore,
@@ -30,21 +30,23 @@ const saveFooterRow = async ({
     inTableFooter
 }) => {
     try {
-        console.log("bbbbbb : ", inEndPoints, inPayload);
+        // console.log("bbbbbb : ", inDataStore);
 
 
         // debugger
-        const k1 = await inServices.actions.createNoRepsonse({
+        const fromSave = await inServices.actions.createNoRepsonse({
             inEndPoint: inEndPoints.create,
             payload: inPayload
         });
-        console.log("aaaaaaaa : ", k1);
 
-        // afterMutation({
-        //     inDataStore, inServices, inEndPoints,
-        //     inTableBody, inVisibleColumnsConfig,
-        //     inShowSerial, inShowActions, inTableFooter
-        // });
+        if (fromSave.ok) {
+            afterMutation({
+                inDataStore, inServices, inEndPoints,
+                inTableBody, inVisibleColumnsConfig,
+                inShowSerial, inShowActions, inTableFooter
+            });
+
+        };
     } catch (err) {
         console.error(err);
         return;
