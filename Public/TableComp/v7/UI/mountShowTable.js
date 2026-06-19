@@ -6,7 +6,7 @@ import buildBody from "../BuildTableVersions/V5/BuildBodyVersions/V6/start.js";
 import searchFuncs from "../SearchFuncs/V4/index.js";
 import setFocus from "../SetFocus/V4/index.js";
 import buildFooter from "../BuildTableVersions/V5/BuildFooterVersions/ForBoth/V2/start.js";
-import buildDataLists from "../BuildDataLists/V3/addToDom.js";
+import buildDataLists from "../BuildDataLists/V4/addToDom.js";
 
 const startFunc = ({
     containerEl,
