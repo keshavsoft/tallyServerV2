@@ -7,7 +7,7 @@ const applyDataList = ({
     const findColumn = inColumnsConfig.find(
         element => element.columnName === key
     );
-    console.log("showDataList : ", showDataList);
+    // console.log("showDataList : ", showDataList);
 
     if (
         showDataList &&

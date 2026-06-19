@@ -48,6 +48,9 @@ const startFunc = ({
     const showFooter = options?.table?.showFooter;
     const optionsWidth = options.table.optionsWidth;
 
+    const defaultRow = dataStore.getDefaultRow();
+    const showSave = options?.table?.showSave;
+
     buildFullUI({
         containerEl: containerEl,
         inTableName: inConfig.tableName,
@@ -90,7 +93,10 @@ const startFunc = ({
             inShowTotalsForSearch: showTotalsForSearch,
             inShowBalanceForSearch: showBalanceForSearch,
             inShowFooterRows: showFooterRows,
-            inShowDataList: showDataList
+            inShowDataList: showDataList,
+            inShowSave: showSave,
+            inServices: services,
+            inEndPoints: endPoints
         });
     };
 

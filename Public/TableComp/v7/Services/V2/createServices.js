@@ -5,6 +5,7 @@ import { findItem } from "./findItem.js";
 import filterPost from "./filterPost.js";
 import findFromParams from "./findFromParams.js";
 import getDataNoParamsFunc from "./getDataNoParamsFunc.js";
+import createItemNoRepsonse from "./createItemNoRepsonse.js";
 
 export const createServices = ({ tableName }) => {
     return {
@@ -41,6 +42,7 @@ export const createServices = ({ tableName }) => {
                 filter: ({ inEndPoint, payload }) => filterPost({ inEndPoint, payload })
             },
             getDataNoParams: ({ inEndPoint, inOnReadFail }) => getDataNoParamsFunc({ inEndPoint, inOnReadFail }),
+            createNoRepsonse: ({ inEndPoint, payload, inOnReadFail }) => createItemNoRepsonse({ inEndPoint, payload, inOnReadFail })
         },
     };
 };

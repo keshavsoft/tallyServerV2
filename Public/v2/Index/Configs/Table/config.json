@@ -7,7 +7,7 @@
         "type": "table"
     },
     "endPoints": {
-        "create": "",
+        "create": "/Api/V1/StockItems/insertGenPk",
         "update": "",
         "delete": "",
         "read": "/Api/V1/StockItems/ShowAll",
@@ -23,7 +23,9 @@
         ],
         "table": {
             "showFooterRows": true,
-            "showDataList": true
+            "showDataList": true,
+            "showSave": true,
+            "showActions": true
         }
     },
     "columnsConfig": [

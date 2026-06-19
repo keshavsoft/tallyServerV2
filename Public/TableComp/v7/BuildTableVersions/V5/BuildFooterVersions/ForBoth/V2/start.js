@@ -1,4 +1,4 @@
-// import { startFunc as createHandleSave } from "./CreateHandleSave/start.js";
+import { startFunc as createHandleSave } from "./CreateHandleSave/start.js";
 // import createHandleOnChange from "./CreateHandleOnChange/V2/start.js";
 
 import { startFunc as createFooter } from "./CreateFooter/start.js";
@@ -15,14 +15,15 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
 
     const localHandleSave = ({ dataFromDom, inCurrentTarget }) => {
         const objectToSave = { ...dataFromDom, ...inDefaultRow };
+        console.log("objectToSave : ", objectToSave, inServices);
 
-        // createHandleSave({
-        //     inServices, inEndPoints, inPayload: objectToSave,
-        //     inDataStore, inTableBody,
-        //     inVisibleColumnsConfig: localVisibleColumns,
-        //     inShowSerial, inShowActions, inCurrentTarget,
-        //     inTableFooter
-        // });
+        createHandleSave({
+            inServices, inEndPoints, inPayload: objectToSave,
+            inDataStore, inTableBody,
+            inVisibleColumnsConfig: localVisibleColumns,
+            inShowSerial, inShowActions, inCurrentTarget,
+            inTableFooter
+        });
     };
 
     const localHandleOnChange = ({ inCurrentTarget, inChangeType }) => {
