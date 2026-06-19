@@ -77,9 +77,6 @@ const startFunc = ({
 
     buildBody({
         inVisibleColumnsConfig: visibleColumnsConfig,
-        inShowSerial: showSerial,
-        inShowActions: showActions,
-        inConfig,
         inTableBody: tableBody,
         inData: data
     });
@@ -90,14 +87,12 @@ const startFunc = ({
             options,
             inVisibleColumnsConfig: visibleColumnsConfig,
             inData: data,
-            inShowSerial: showSerial,
             inShowTotals: showTotals,
             inShowBalance: showBalance,
             inShowTotalsForSearch: showTotalsForSearch,
             inShowBalanceForSearch: showBalanceForSearch,
             inShowFooterRows: showFooterRows,
             inShowDataList: showDataList,
-            inShowSave: showSave,
             inServices: services,
             inEndPoints: endPoints,
             inDataStore: dataStore,

@@ -5,13 +5,16 @@ import { startFunc as createFooter } from "./CreateFooter/start.js";
 // import forSummary from "../../ForSummary/V8/CreateFooterRow/V4/start.js";
 
 const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
-    inTableFooter, inShowDataList, inDataStore, inShowSave, inOptions,
-    inServices, inEndPoints, inTableBody, inShowSerial, inShowActions,
+    inTableFooter, inShowDataList, inDataStore, inOptions,
+    inServices, inEndPoints, inTableBody,
     inData, inShowFooterRows = false
 }) => {
     // debugger;
 
     const localVisibleColumns = inVisibleColumnsConfig
+
+    const oldShowActions = inTableFooter.getAttribute("ks-showActions");
+    const oldShowSerial = inTableFooter.getAttribute("ks-showSerial");
 
     const localHandleSave = ({ dataFromDom, inCurrentTarget }) => {
         const objectToSave = { ...dataFromDom, ...inDefaultRow };
@@ -21,7 +24,8 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
             inServices, inEndPoints, inPayload: objectToSave,
             inDataStore, inTableBody,
             inVisibleColumnsConfig: localVisibleColumns,
-            inShowSerial, inShowActions, inCurrentTarget,
+            inShowSerial: oldShowSerial,
+            inShowActions: oldShowActions, inCurrentTarget,
             inTableFooter
         });
     };
@@ -40,10 +44,10 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
         inVisibleColumnsConfig: localVisibleColumns,
         inDefaultRow, inShowDataList, keys,
         onChangeFunc: localHandleOnChange,
-        inShowSave, inOnSaveFunc: localHandleSave,
-        inShowSerial
+        inShowSave: oldShowActions, inOnSaveFunc: localHandleSave,
+        inShowSerial: oldShowSerial
     });
-    console.log("inShowFooterRows : ", localTr);
+    // console.log("inShowFooterRows : ", localTr);
 
     if (localTr) inTableFooter.appendChild(localTr);
     // // debugger;

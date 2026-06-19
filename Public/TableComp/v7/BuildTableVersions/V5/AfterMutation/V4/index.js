@@ -13,27 +13,21 @@ const startFunc = async ({
     inEndPoints,
     inTableBody,
     inVisibleColumnsConfig,
-    inShowSerial,
-    inShowActions,
     inTableFooter
 }) => {
     try {
-        // debugger;
         const dataFromFetch = await inServices.actions.getData({
             inEndPoint: inEndPoints.read
         });
-        console.log("dataFromFetch : ", dataFromFetch);
 
         inDataStore.setData(dataFromFetch);
 
         const dataToShow = inDataStore.getData();
 
         buildBody({
-            inData: dataToShow, inDataStore,
-            inTableBody, inServices,
-            inVisibleColumnsConfig,
-            inShowSerial, inShowActions,
-            inEndPoints
+            inData: dataToShow,
+            inTableBody,
+            inVisibleColumnsConfig
         });
 
         setFocus({ inContainerEl: inTableFooter });
