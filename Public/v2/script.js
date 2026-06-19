@@ -192,12 +192,16 @@ async function ensureKSTableComp() {
 
     async function tryLocal() {
         try {
-            const fromPromise = await loadScriptAsModule("/TableComp/v5/entry.js");
+            const fromPromise = await loadScriptAsModule("/TableComp/v7/entry.js");
 
-            console.log("KSTableComp loaded from Local Server : TableComp/v5");
+            console.log("KSTableComp loaded from Local Server : TableComp/v7");
 
             if (fromPromise) return true;
-        } catch { return false };
+        } catch {
+            console.log("KSTableComp failed from Local Server : TableComp/v7");
+
+            return false
+        };
 
         return false;
     };
@@ -209,7 +213,7 @@ async function ensureKSTableComp() {
 
     if (await tryLocal()) return;
 
-    if (await tryGitHub()) return;
+    // if (await tryGitHub()) return;
 
     throw new Error("KSTableComp could not be loaded");
 };
@@ -234,7 +238,7 @@ async function ensureKSVertical() {
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-vertical-dom/Public/v3/ksvertical.js");
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-vertical-dom/Public/v4/ksvertical.js");
 
             console.log("KSVertical loaded from git : tailwind-vertical-dom");
 

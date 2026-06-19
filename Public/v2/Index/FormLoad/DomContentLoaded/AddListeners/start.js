@@ -6,6 +6,7 @@ import loginButtonId from "./loginButtonId/start.js";
 import userHeaderHtmlId from "./UserHeaderHtmlId/start.js";
 import escapeKey from "./EscapeKey/start.js";
 import CreateHtmlId from "./CreateHtmlId/start.js";
+import TableHtmlId from "./TableHtmlId/start.js";
 
 const hookAllListeners = () => {
     showAllHtmlId();
@@ -16,6 +17,7 @@ const hookAllListeners = () => {
     userHeaderHtmlId();
     escapeKey();
     CreateHtmlId();
+    TableHtmlId();
 };
 
 export { hookAllListeners };

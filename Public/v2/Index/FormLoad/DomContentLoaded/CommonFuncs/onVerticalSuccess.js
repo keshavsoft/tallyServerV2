@@ -1,5 +1,5 @@
 const startFunc = (inResponseStatus) => {
-    console.log("aaaaaaaaaa");
+    // console.log("aaaaaaaaaa");
     clickButtonById("ShowAllHtmlId");
 };
 
