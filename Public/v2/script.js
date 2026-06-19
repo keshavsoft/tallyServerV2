@@ -248,7 +248,7 @@ async function ensureKSVertical() {
         try {
             const fromPromise = await loadScriptAsModule("/TableComp/v4/entry.js");
 
-            console.log("KSVertical loaded from Local Server : TableComp/v1");
+            console.log("KSVertical loaded from Local Server : TableComp/v4");
 
             if (fromPromise) return true;
         } catch { return false };

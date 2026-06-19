@@ -18,6 +18,16 @@
             "svgName": "home"
         },
         {
+            "text": "Create",
+            "id": "CreateHtmlId",
+            "icon": [],
+            "uiClasses": {
+                "aClass": "",
+                "svgDivClass": "size-10"
+            },
+            "svgName": "home"
+        },
+        {
             "text": "WithSerial",
             "id": "WithSerialHtmlId",
             "icon": [],

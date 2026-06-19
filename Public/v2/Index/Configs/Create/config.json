@@ -7,7 +7,7 @@
         "type": "table"
     },
     "endPoints": {
-        "create": "/Api/V1/StockItems/Insert",
+        "create": "/Api/V1/StockItems/insertGenPk",
         "update": "",
         "delete": "",
         "read": "/Api/V1/StockItems/ShowAll",
@@ -25,12 +25,13 @@
     "columnsConfig": [
         {
             "columnName": "StockItemName",
-            "title": "StockItemName",
+            "title": "Item Name",
             "field": "StockItemName",
             "cellConfig": {
                 "width": "150px"
             },
-            "isConsider": true
+            "isConsider": true,
+            "verticalConfig": {}
         },
         {
             "columnName": "StockGstApplicable",
@@ -101,7 +102,7 @@
         },
         {
             "columnName": "StockCategory",
-            "title": "StockCategory",
+            "title": "StockCategory-----",
             "cellConfig": {
                 "width": "150px"
             }
@@ -113,8 +114,12 @@
         }
     ],
     "callbacks": {
+        "table": {
+            "onDelete": "function",
+            "onReadFail": "function"
+        },
         "vertical": {
-            "onSuccess": "func"
+            "onSuccess": "function"
         }
     }
 }
