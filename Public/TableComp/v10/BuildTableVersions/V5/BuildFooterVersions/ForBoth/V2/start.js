@@ -49,7 +49,7 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
         inShowSave: oldShowActions, inOnSaveFunc: localHandleSave,
         inShowSerial: oldShowSerial
     });
-    console.log("inShowFooterRows : ", inShowFooterRows);
+    // console.log("inShowFooterRows : ", inShowFooterRows);
 
     if (localTr) inTableFooter.appendChild(localTr);
     // // debugger;

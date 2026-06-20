@@ -18,13 +18,13 @@ const createFooterInput = (args) => {
     } = args;
 
     const input = createInput({
-        key, inOnKeyDown, inOnKeyDownType,
-        showDataList, inColumnsConfig
+        key, inOnKeyDown, inOnKeyDownType, inOnChangeType,
+        showDataList, inColumnsConfig, onChangeFunc
     });
 
-    if (inOnChangeType) {
-        input.dataset.onChangeType = inOnChangeType;
-    }
+    // if (inOnChangeType) {
+    //     input.dataset.onChangeType = inOnChangeType;
+    // }
 
     // applyDataList({
     //     input,

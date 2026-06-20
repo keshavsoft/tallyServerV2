@@ -3,7 +3,7 @@
         "ulClass1": "[&_svg]:size-6"
     },
     "title": {
-        "text": "Bills",
+        "text": "StockItems",
         "htmlId": "htmlId"
     },
     "items": [

@@ -4,8 +4,8 @@ const createInput = ({
     type = "text",
     key,
     className,
-    inOnKeyDown, inColumnsConfig,
-    inOnKeyDownType, showDataList
+    inOnKeyDown, inColumnsConfig, inOnChangeType,
+    inOnKeyDownType, showDataList, onChangeFunc
 } = {}) => {
     const input = document.createElement("ks-table-footer-input");
 
@@ -18,6 +18,9 @@ const createInput = ({
     input.ksOnKeyDownType = inOnKeyDownType;
     input.ksShowDataList = showDataList;
     input.ksInColumnsConfig = inColumnsConfig;
+
+    input.ksOnChangeFunc = onChangeFunc;
+    input.ksOnChangeType = inOnChangeType;
 
     // console.log("1111111111 : ", input, inOnKeyDown, inOnKeyDownType);
     return input;

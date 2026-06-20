@@ -1,4 +1,5 @@
 import attachKeyDownEvent from "./AttachKeyDownEvent/v2/start.js";
+import attachChangeEvent from "./attachChangeEvent.js";
 
 class KsTableFooterInput extends HTMLElement {
     connectedCallback() {
@@ -11,6 +12,8 @@ class KsTableFooterInput extends HTMLElement {
         const placeholder = this.ksPlaceholder;
         const showDataList = this.ksShowDataList;
         const inColumnsConfig = this.ksInColumnsConfig;
+        const onChangeFunc = this.ksOnChangeFunc;
+        const onChangeType = this.ksOnChangeType;
 
         const input = document.createElement("input");
 
@@ -33,6 +36,10 @@ class KsTableFooterInput extends HTMLElement {
             input, inOnKeyDown: onKeyDown,
             inOnKeyDownType: onKeyDownType
         });
+
+        if (onChangeType) {
+            attachChangeEvent({ input, onChangeFunc: onChangeFunc, onChangeType });
+        };
 
         this.appendChild(input);
     }

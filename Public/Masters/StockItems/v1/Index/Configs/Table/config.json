@@ -1,0 +1,149 @@
+{
+    "containerId": "kSTableContainer",
+    "tableName": "",
+    "mode": "create",
+    "layout": {
+        "verticalPosition": "top",
+        "type": "table"
+    },
+    "endPoints": {
+        "create": "/Api/v1/StockItems/insertGenPk",
+        "update": "",
+        "delete": "/Api/v1/StockItems/del",
+        "read": "/Api/v1/StockItems/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {
+            "ItemNames": "/Api/v1/StockItems/ShowAll"
+        }
+    },
+    "options": {
+        "enabledSections": [
+            "vertical",
+            "table",
+            "footer"
+        ],
+        "table": {
+            "showFooterRows": true,
+            "showDataList": true,
+            "showSave": true,
+            "showActions": true,
+            "showSerial": true,
+            "showFooter": true
+        }
+    },
+    "columnsConfig": [
+        {
+            "columnName": "StockItemName",
+            "title": "StockItemName",
+            "field": "StockItemName",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "dataListSource": "StockItemName",
+            "allowOnChange": true,
+            "onChangeType": "onDataListChange"
+        },
+        {
+            "columnName": "StockGstApplicable",
+            "title": "StockGstApplicable",
+            "field": "StockGstApplicable",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true,
+            "isVisible": false
+        },
+        {
+            "columnName": "StockBaseUnits",
+            "title": "StockBaseUnits",
+            "field": "StockBaseUnits",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true,
+            "isVisible": false
+        },
+        {
+            "columnName": "sgstRate",
+            "title": "sgstRate",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isVisible": true
+        },
+        {
+            "columnName": "cgstRate",
+            "title": "cgstRate",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isVisible": false
+        },
+        {
+            "columnName": "TaxPer",
+            "title": "TaxPer",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isVisible": false
+        },
+        {
+            "columnName": "Uom",
+            "title": "Uom",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockItemReservedName",
+            "title": "StockItemReservedName",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isVisible": false
+        },
+        {
+            "columnName": "StockItemType",
+            "title": "StockItemType",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isVisible": false
+        },
+        {
+            "columnName": "StockParentName",
+            "title": "StockParentName",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isVisible": false
+        },
+        {
+            "columnName": "StockCategory",
+            "title": "StockCategory",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isVisible": false
+        },
+        {
+            "field": "pk",
+            "title": "pk",
+            "primary": true,
+            "isVisible": false
+        }
+    ],
+    "callbacks": {
+        "table": {
+            "onDelete1": "function",
+            "onReadFail": "function"
+        }
+    }
+}

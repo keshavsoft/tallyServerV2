@@ -20,7 +20,6 @@ const startFunc = ({
         default:
             break;
     };
-    // return localFunction;
 };
 
 const onDataListChange = ({ inCurrentTarget, inDataStore,
