@@ -6,6 +6,15 @@
         "verticalPosition": "top",
         "type": "table"
     },
+    "endPoints1": {
+        "create": "",
+        "update": "",
+        "delete": "",
+        "read": "/Api/V1/StockItems/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {}
+    },
     "options": {
         "enabledSections": [
             "vertical",
@@ -13,12 +22,7 @@
             "footer"
         ],
         "table": {
-            "showFooterRows": true,
-            "showDataList": true,
-            "showSave": true,
-            "showActions": true,
-            "showSerial": true,
-            "showFooter": true
+            "showSerial": true
         }
     },
     "columnsConfig1": [
@@ -29,14 +33,7 @@
             "cellConfig": {
                 "width": "150px"
             },
-            "isConsider": true,
-            "verticalConfig": {},
-            "tableConfig": {},
-            "isVisible": true,
-            "tableFooterDataListShow": true,
-            "dataListSource": "StockItemName",
-            "allowOnChange": true,
-            "onChangeType": "onDataListChange"
+            "isConsider": true
         },
         {
             "columnName": "StockGstApplicable",
@@ -45,8 +42,7 @@
             "cellConfig": {
                 "width": "150px"
             },
-            "isConsider": true,
-            "isVisible": false
+            "isConsider": true
         },
         {
             "columnName": "StockBaseUnits",
@@ -55,32 +51,28 @@
             "cellConfig": {
                 "width": "150px"
             },
-            "isConsider": true,
-            "isVisible": false
+            "isConsider": true
         },
         {
             "columnName": "sgstRate",
             "title": "sgstRate",
             "cellConfig": {
                 "width": "150px"
-            },
-            "isVisible": true
+            }
         },
         {
             "columnName": "cgstRate",
             "title": "cgstRate",
             "cellConfig": {
                 "width": "150px"
-            },
-            "isVisible": false
+            }
         },
         {
             "columnName": "TaxPer",
             "title": "TaxPer",
             "cellConfig": {
                 "width": "150px"
-            },
-            "isVisible": false
+            }
         },
         {
             "columnName": "Uom",
@@ -94,44 +86,102 @@
             "title": "StockItemReservedName",
             "cellConfig": {
                 "width": "150px"
-            },
-            "isVisible": false
+            }
         },
         {
             "columnName": "StockItemType",
             "title": "StockItemType",
             "cellConfig": {
                 "width": "150px"
-            },
-            "isVisible": false
+            }
         },
         {
             "columnName": "StockParentName",
             "title": "StockParentName",
             "cellConfig": {
                 "width": "150px"
-            },
-            "isVisible": false
+            }
         },
         {
             "columnName": "StockCategory",
             "title": "StockCategory",
             "cellConfig": {
                 "width": "150px"
-            },
-            "isVisible": false
+            }
         },
         {
             "field": "pk",
             "title": "pk",
-            "primary": true,
-            "isVisible": false
+            "primary": true
         }
     ],
     "callbacks": {
         "table": {
-            "onDelete1": "function",
+            "onDelete": "function",
             "onReadFail": "function"
+        }
+    },
+    "columnsConfig2": [
+        {
+            "columnName": "LedgerName",
+            "title": "LedgerName",
+            "cellConfig": {
+                "width": "400px",
+                "tdClass": "px-4 py-2 border"
+            },
+            "dataListSource": "LedgerName.LedgerName",
+            "tableFooterDataListShow": true,
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4"
+                }
+            },
+            "allowOnChange": true,
+            "onChangeType": "onDataListChange"
+        },
+        {
+            "columnName": "InvoiceDate",
+            "title": "InvoiceDate",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2",
+                    "labelClass": "w-36 text-sm font-medium"
+                }
+            },
+            "isDate": true,
+            "defaultToday": true,
+            "isReadonly": false,
+            "autoFocus": false,
+            "isSearch": false,
+            "type": "date"
+        },
+        {
+            "columnName": "PartyGSTIN",
+            "title": "PartyGSTIN",
+            "dataListFillName": "PartyGSTIN",
+            "cellConfig": {
+                "width": "200px"
+            },
+            "uiClasses": {
+                "form": {
+                    "rowClass": "flex items-center space-x-4 w-1/2"
+                }
+            }
+        }
+    ],
+    "endPoints2": {
+        "create": "/Api/v1/BillsTable/insertGenPk",
+        "update": "",
+        "delete": "/Api/v1/BillsTable/del",
+        "read": "/Api/v1/BillsTable/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {
+            "LedgerName": "/Api/v1/LedgerNames/ShowAll"
         }
     },
     "columnsConfig": [
