@@ -15,7 +15,7 @@
         "filter": "",
         "dataLists": {},
         "dataListEndpoints": {
-            "ItemNames": "/Api/v1/StockItems/ShowAll"
+            "ItemName": "/Api/v1/StockItems/ShowAll"
         }
     },
     "options": {
@@ -148,9 +148,9 @@
     },
     "columnsConfig": [
         {
-            "columnName": "StockItemName",
-            "title": "StockItemName",
-            "field": "StockItemName",
+            "columnName": "ItemName",
+            "title": "ItemName",
+            "field": "ItemName",
             "cellConfig": {
                 "width": "200px"
             },
@@ -159,7 +159,7 @@
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
-            "dataListSource": "ItemNames.StockItemName",
+            "dataListSource": "ItemName.StockItemName",
             "allowOnChange": true,
             "onChangeType": "onDataListChange"
         },

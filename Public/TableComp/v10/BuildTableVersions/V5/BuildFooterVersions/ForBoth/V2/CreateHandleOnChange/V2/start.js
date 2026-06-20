@@ -28,7 +28,7 @@ const onDataListChange = ({ inCurrentTarget, inDataStore,
 }) => {
     const localCurrentTarget = inCurrentTarget;
     const inputName = localCurrentTarget.name;
-
+    debugger
     const localCurrentValue = localCurrentTarget.value;
 
     const localFindRow = findRow({
@@ -40,11 +40,23 @@ const onDataListChange = ({ inCurrentTarget, inDataStore,
 
     if (localFindRow === undefined) return;
 
+    insertToDom({ inTableFooter: localCurrentTarget.closest("tr"), inFoundRow: localFindRow });
+
     updateToSaveRow({
         inColumnsConfig,
         inFindRow: localFindRow,
         inToSaveRow
     });
+};
+
+const insertToDom = ({ inTableFooter, inFoundRow }) => {
+    const footerInputs = inTableFooter.querySelectorAll("input");
+
+    for (const th of footerInputs) {
+        if (th.name in inFoundRow) {
+            th.value = inFoundRow[th.name];
+        };
+    };
 };
 
 const findRow = ({ dataStoreName, inDataListSource, inValueToFind, inDataStore }) => {
