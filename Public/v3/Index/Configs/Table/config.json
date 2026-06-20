@@ -1,0 +1,108 @@
+{
+    "containerId": "kSTableContainer",
+    "tableName": "",
+    "mode": "create",
+    "layout": {
+        "verticalPosition": "top",
+        "type": "table"
+    },
+    "endPoints": {
+        "create": "/Api/v1/ItemsTable/insertGenPk",
+        "update": "",
+        "delete": "/Api/v1/ItemsTable/del",
+        "read": "/Api/v1/ItemsTable/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {
+            "ItemNames": "/Api/v1/StockItems/ShowAll"
+        }
+    },
+    "options": {
+        "enabledSections": [
+            "vertical",
+            "table",
+            "footer"
+        ],
+        "table": {
+            "showFooterRows": true,
+            "showDataList": true,
+            "showSave": true,
+            "showActions": true,
+            "showSerial": true
+        }
+    },
+    "columnsConfig": [
+        {
+            "columnName": "StockItemName",
+            "title": "StockItemName",
+            "field": "StockItemName",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "dataListSource": "ItemNames.StockItemName"
+        },
+        {
+            "columnName": "RateInc",
+            "title": "RateInc",
+            "field": "RateInc",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true
+        },
+        {
+            "columnName": "Qty",
+            "title": "Qty",
+            "field": "Qty",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Qty"
+        },
+        {
+            "columnName": "Amount",
+            "title": "Amount",
+            "field": "Amount",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Amount"
+        },
+        {
+            "field": "pk",
+            "title": "pk",
+            "primary": true,
+            "isVisible": false
+        }
+    ],
+    "callbacks": {
+        "table": {
+            "onDelete1": "function",
+            "onReadFail": "function"
+        }
+    }
+}

@@ -227,5 +227,27 @@
   "PrimarykeyTableNames": [
     "BillsTable"
   ],
-  "PrimarykeyTables": []
+  "PrimarykeyTables": [],
+  "columnsConfig": [
+    {
+      "columnName": "StockItemName",
+      "title": "StockItemName",
+      "field": "StockItemName",
+      "cellConfig": {
+        "width": "150px"
+      },
+      "isConsider": true,
+      "verticalConfig": {},
+      "tableConfig": {},
+      "isVisible": true,
+      "tableFooterDataListShow": true,
+      "dataListSource": "ItemNames.StockItemName"
+    },
+    {
+      "field": "pk",
+      "title": "pk",
+      "primary": true,
+      "isVisible": false
+    }
+  ]
 }

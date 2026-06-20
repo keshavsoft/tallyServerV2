@@ -7,6 +7,7 @@ const startFunc = ({ keys, tr, options = {}, inDefaultRow, inTdClass,
     // debugger;
     inVisibleColumnsConfig.forEach(loopColumn => {
         const defaultValue = defaultRow ? defaultRow[loopColumn.columnName] : "";
+        console.log("loopColumn: ", loopColumn);
 
         const createdFooterCell = createFooterCell({
             key: loopColumn.columnName,

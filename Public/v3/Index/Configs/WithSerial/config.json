@@ -1,0 +1,124 @@
+{
+    "containerId": "kSTableContainer",
+    "tableName": "",
+    "mode": "create",
+    "layout": {
+        "verticalPosition": "top",
+        "type": "table"
+    },
+    "endPoints": {
+        "create": "",
+        "update": "",
+        "delete": "",
+        "read": "/Api/V1/StockItems/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {}
+    },
+    "options": {
+        "enabledSections": [
+            "vertical",
+            "table",
+            "footer"
+        ],
+        "table": {
+            "showSerial": true
+        }
+    },
+    "columnsConfig": [
+        {
+            "columnName": "StockItemName",
+            "title": "StockItemName",
+            "field": "StockItemName",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "StockGstApplicable",
+            "title": "StockGstApplicable",
+            "field": "StockGstApplicable",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "StockBaseUnits",
+            "title": "StockBaseUnits",
+            "field": "StockBaseUnits",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "sgstRate",
+            "title": "sgstRate",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "cgstRate",
+            "title": "cgstRate",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "TaxPer",
+            "title": "TaxPer",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "Uom",
+            "title": "Uom",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockItemReservedName",
+            "title": "StockItemReservedName",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockItemType",
+            "title": "StockItemType",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockParentName",
+            "title": "StockParentName",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockCategory",
+            "title": "StockCategory",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "field": "pk",
+            "title": "pk",
+            "primary": true
+        }
+    ],
+    "callbacks": {
+        "table": {
+            "onDelete": "function",
+            "onReadFail": "function"
+        }
+    }
+}
