@@ -1,70 +1,161 @@
 import attachKeyDownEvent from "./AttachKeyDownEvent/v2/start.js";
 import attachChangeEvent from "./attachChangeEvent.js";
 
-class KsTableFooterInput extends HTMLElement {
-    connectedCallback() {
-        const onKeyDown = this.ksOnKeyDown;
-        const onKeyDownType = this.ksOnKeyDownType;
-        const name = this.ksName || "";
-        const className = this.ksClassName || "w-full border rounded px-2 py-1";
-        // const className = this.ksClassName || "border rounded px-2 py-1";
+const getInputOptions = ({ inElement }) => {
+    const localName =
+        inElement.ksName || "";
 
-        const type = this.ksType;
-        const placeholder = this.ksPlaceholder;
-        const showDataList = this.ksShowDataList;
-        const inColumnsConfig = this.ksInColumnsConfig;
-        const onChangeFunc = this.ksOnChangeFunc;
-        const onChangeType = this.ksOnChangeType;
+    return {
+        inType: inElement.ksType || "text",
+        inPlaceholder: inElement.ksPlaceholder || "",
+        inName: localName,
+        inClassName: inElement.ksClassName ||
+            "w-full border rounded px-2 py-1",
+        inShowDataList: inElement.ksShowDataList,
+        inColumnsConfig: inElement.ksInColumnsConfig || [],
+        inOnChangeFunc: inElement.ksOnChangeFunc,
+        inOnChangeType: inElement.ksOnChangeType,
+        inOnKeyDown: inElement.ksOnKeyDown,
+        inOnKeyDownType: inElement.ksOnKeyDownType,
+        inRightAlign: inElement.ksRightAlign,
+        inWidth: inElement.ksWidth
+    };
+};
 
-        const rightAlign = this.ksRightAlign;
-        const width = this.ksWidth;
+const applyTdStyle = ({
+    inElement,
+    inRightAlign,
+    inWidth
+}) => {
+    const localClosestTd =
+        inElement.closest("td");
 
-        const input = document.createElement("input");
+    if (!localClosestTd) return;
 
-        const closestTd = this.closest("td");
+    if (inWidth) {
+        localClosestTd.style.width = inWidth;
+    };
 
-        if (closestTd) {
-            console.log("type : ", closestTd, rightAlign, width);
-            closestTd.style.width = width;
+    if (inRightAlign) {
+        localClosestTd.classList.add("text-right");
+    };
+};
 
-            console.log("closestTd", closestTd);
-            console.log("width", width);
-            closestTd.style.width = width;
-            console.log("after", closestTd.getAttribute("style"));
+const createInput = ({
+    inType,
+    inPlaceholder,
+    inName,
+    inClassName
+}) => {
+    const localInput =
+        document.createElement("input");
 
-            if (rightAlign) {
-                closestTd.classList.add("text-right");
-            };
-        };
+    localInput.type = inType;
+    localInput.placeholder = inPlaceholder;
+    localInput.name = inName;
+    localInput.setAttribute("class", inClassName);
 
-        input.type = type;
-        input.placeholder = placeholder;
-        input.name = name;
-        input.setAttribute("class", className);
+    return localInput;
+};
 
-        const findColumn = inColumnsConfig.find(
-            element => element.columnName === name
-        );
+const getColumnConfig = ({
+    inColumnsConfig,
+    inName
+}) => {
+    return inColumnsConfig.find(
+        localColumn => localColumn.columnName === inName
+    );
+};
 
-        if (showDataList && findColumn?.tableFooterDataListShow) {
-            input.setAttribute("list", `${name}List`);
-            input.dataset.dataListSource =
-                findColumn.dataListSource;
-        }
-
-        attachKeyDownEvent({
-            input, inOnKeyDown: onKeyDown,
-            inOnKeyDownType: onKeyDownType
+const applyDataList = ({
+    inInput,
+    inName,
+    inShowDataList,
+    inColumnsConfig
+}) => {
+    const localColumnConfig =
+        getColumnConfig({
+            inColumnsConfig,
+            inName
         });
 
-        if (onChangeType) {
-            attachChangeEvent({ input, onChangeFunc: onChangeFunc, onChangeType });
-        };
+    if (!inShowDataList) return;
+    if (!localColumnConfig?.tableFooterDataListShow) return;
 
-        this.appendChild(input);
+    inInput.setAttribute("list", `${inName}List`);
+    inInput.dataset.dataListSource =
+        localColumnConfig.dataListSource;
+};
+
+const attachEvents = ({
+    inInput,
+    inOnKeyDown,
+    inOnKeyDownType,
+    inOnChangeFunc,
+    inOnChangeType
+}) => {
+    attachKeyDownEvent({
+        input: inInput,
+        inOnKeyDown,
+        inOnKeyDownType
+    });
+
+    if (!inOnChangeType) return;
+
+    attachChangeEvent({
+        input: inInput,
+        onChangeFunc: inOnChangeFunc,
+        onChangeType: inOnChangeType
+    });
+};
+
+const renderInput = ({
+    inElement,
+    inInput
+}) => {
+    inElement.replaceChildren(inInput);
+};
+
+class KsTableFooterInput extends HTMLElement {
+    connectedCallback() {
+        const localOptions =
+            getInputOptions({
+                inElement: this
+            });
+
+        applyTdStyle({
+            inElement: this,
+            inRightAlign: localOptions.inRightAlign,
+            inWidth: localOptions.inWidth
+        });
+
+        const localInput =
+            createInput(localOptions);
+
+        applyDataList({
+            inInput: localInput,
+            inName: localOptions.inName,
+            inShowDataList: localOptions.inShowDataList,
+            inColumnsConfig: localOptions.inColumnsConfig
+        });
+
+        attachEvents({
+            inInput: localInput,
+            inOnKeyDown: localOptions.inOnKeyDown,
+            inOnKeyDownType: localOptions.inOnKeyDownType,
+            inOnChangeFunc: localOptions.inOnChangeFunc,
+            inOnChangeType: localOptions.inOnChangeType
+        });
+
+        renderInput({
+            inElement: this,
+            inInput: localInput
+        });
     }
 }
 
-customElements.define("ks-table-footer-input", KsTableFooterInput);
+if (!customElements.get("ks-table-footer-input")) {
+    customElements.define("ks-table-footer-input", KsTableFooterInput);
+}
 
-export default {};
+export default KsTableFooterInput;
