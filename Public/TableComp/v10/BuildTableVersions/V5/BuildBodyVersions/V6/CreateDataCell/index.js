@@ -13,28 +13,31 @@ const createDataCell = ({
     const width =
         inCellConfig.width;
 
-    const td = createTd();
-
-    applyWidth({
-        td,
-        inWidth: width
+    const td = createTd({
+        inValue: value, inRightAlign: inCellConfig.rightAlign,
+        inWidth: width, inSearchValue: searchValue
     });
 
-    applyRightAlign({
-        td,
-        inCellConfig
-    });
+    // applyWidth({
+    //     td,
+    //     inWidth: width
+    // });
 
-    const displayValue = getDisplayValue({
-        value,
-        inCellConfig
-    });
+    // applyRightAlign({
+    //     td,
+    //     inCellConfig
+    // });
 
-    setCellContent({
-        td,
-        displayValue,
-        searchValue
-    });
+    // const displayValue = getDisplayValue({
+    //     value,
+    //     inCellConfig
+    // });
+
+    // setCellContent({
+    //     td,
+    //     displayValue,
+    //     searchValue
+    // });
 
     return td;
 

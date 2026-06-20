@@ -4,6 +4,8 @@ import createHandleOnChange from "./CreateHandleOnChange/V2/start.js";
 import { startFunc as createFooter } from "./CreateFooter/start.js";
 // import forSummary from "../../ForSummary/V8/CreateFooterRow/V4/start.js";
 
+import forSummary from "../../ForSummary/V9/CreateFooterRow/V4/start.js";
+
 const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
     inTableFooter, inShowDataList, inDataStore, inOptions,
     inServices, inEndPoints, inTableBody,
@@ -47,24 +49,25 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
         inShowSave: oldShowActions, inOnSaveFunc: localHandleSave,
         inShowSerial: oldShowSerial
     });
-    // console.log("inShowFooterRows : ", localTr);
+    console.log("inShowFooterRows : ", inShowFooterRows);
 
     if (localTr) inTableFooter.appendChild(localTr);
     // // debugger;
 
-    // if (inShowFooterRows) {
-    //     const forSummaryTr = forSummary({
-    //         inVisibleColumnsConfig: localVisibleColumns,
-    //         inThSerialClassName: "", inData,
-    //         inShowTotals: true, inShowBalance: true,
-    //         inShowSerial, inShowActions
-    //     });
-    //     // debugger;
+    if (inShowFooterRows) {
+        const forSummaryTr = forSummary({
+            inVisibleColumnsConfig: localVisibleColumns,
+            inThSerialClassName: "", inData,
+            inShowTotals: true, inShowBalance: true,
+            inShowSerial: oldShowSerial,
+            inShowActions: oldShowActions
+        });
+        // debugger;
 
-    //     forSummaryTr.forEach(element => {
-    //         inTableFooter.appendChild(element);
-    //     });
-    // };
+        forSummaryTr.forEach(element => {
+            inTableFooter.appendChild(element);
+        });
+    };
 
 };
 

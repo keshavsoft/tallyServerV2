@@ -38,7 +38,7 @@
             "title": "StockItemName",
             "field": "StockItemName",
             "cellConfig": {
-                "width": "150px"
+                "width": "200px"
             },
             "isConsider": true,
             "verticalConfig": {},
@@ -52,7 +52,8 @@
             "title": "RateInc",
             "field": "RateInc",
             "cellConfig": {
-                "width": "150px"
+                "width": "50px",
+                "rightAlign": true
             },
             "isConsider": true,
             "verticalConfig": {},
@@ -65,7 +66,8 @@
             "title": "Qty",
             "field": "Qty",
             "cellConfig": {
-                "width": "150px"
+                "width": "50px",
+                "rightAlign": true
             },
             "isConsider": true,
             "verticalConfig": {},
@@ -81,7 +83,8 @@
             "title": "Amount",
             "field": "Amount",
             "cellConfig": {
-                "width": "150px"
+                "width": "50px",
+                "rightAlign": true
             },
             "isConsider": true,
             "verticalConfig": {},
