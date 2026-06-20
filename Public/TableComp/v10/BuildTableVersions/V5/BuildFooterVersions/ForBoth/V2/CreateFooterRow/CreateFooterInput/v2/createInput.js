@@ -1,15 +1,16 @@
 // import { createInputComponent } from "../../../../../../../../components/v2/input.js";
 
 const createInput = ({
-    type = "text",
+    inType = "text",
     key,
     className,
     inOnKeyDown, inColumnsConfig, inOnChangeType,
-    inOnKeyDownType, showDataList, onChangeFunc
+    inOnKeyDownType, showDataList, onChangeFunc, inRightAlign,
+    inWidth
 } = {}) => {
     const input = document.createElement("ks-table-footer-input");
 
-    input.ksType = type;
+    input.ksType = inType;
     input.ksPlaceholder = key;
     input.ksName = key;
     input.ksClassName = className;
@@ -21,6 +22,9 @@ const createInput = ({
 
     input.ksOnChangeFunc = onChangeFunc;
     input.ksOnChangeType = inOnChangeType;
+
+    input.ksRightAlign = inRightAlign;
+    input.ksWidth = inWidth;
 
     // console.log("1111111111 : ", input, inOnKeyDown, inOnKeyDownType);
     return input;

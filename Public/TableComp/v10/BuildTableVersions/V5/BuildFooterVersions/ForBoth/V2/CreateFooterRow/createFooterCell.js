@@ -1,8 +1,9 @@
 import createFooterInput from "./CreateFooterInput/v2/start.js";
 
 const createFooterCell = ({ key, onChangeFunc, showDataList, inColumnsConfig,
-    inDefaultValue, inTdClass, inAllowOnChange = false, inOnChangeType,
-    inOnKeyDown, inOnKeyDownType, inDefaultRow }) => {
+    inDefaultValue, inTdClass = "px-4 py-2 border", inAllowOnChange = false, inOnChangeType,
+    inOnKeyDown, inOnKeyDownType, inDefaultRow, inType, inRightAlign,
+    inWidth }) => {
 
     let localChangeFunc;
 
@@ -16,7 +17,7 @@ const createFooterCell = ({ key, onChangeFunc, showDataList, inColumnsConfig,
     const input = createFooterInput({
         key, onChangeFunc: localChangeFunc, inOnKeyDown, inOnKeyDownType,
         showDataList, inColumnsConfig, inDefaultValue, inOnChangeType,
-        inDefaultRow
+        inDefaultRow, inType, inRightAlign, inWidth
     });
 
     const div = document.createElement("div");

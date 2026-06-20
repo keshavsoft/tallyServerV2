@@ -6,7 +6,7 @@ import attachKeyDownEvent from "./AttachKeyDownEvent/v2/start.js";
 
 const createFooterInput = (args) => {
     const {
-        key,
+        key, inType,
         onChangeFunc,
         showDataList,
         inColumnsConfig,
@@ -14,12 +14,13 @@ const createFooterInput = (args) => {
         inOnChangeType,
         inOnKeyDown,
         inOnKeyDownType,
-        inDefaultRow
+        inDefaultRow, inRightAlign, inWidth
     } = args;
 
     const input = createInput({
         key, inOnKeyDown, inOnKeyDownType, inOnChangeType,
-        showDataList, inColumnsConfig, onChangeFunc
+        showDataList, inColumnsConfig, onChangeFunc, inType, inRightAlign,
+        inWidth
     });
 
     // if (inOnChangeType) {

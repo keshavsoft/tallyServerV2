@@ -19,7 +19,6 @@ const startFunc = ({
             inColumnsConfig: inVisibleColumnsConfig
         },
         inDefaultRow,
-        inTdClass: "px-4 py-2 border",
         inSerialClass: "",
         inShowSerial,
         inShowDataList,

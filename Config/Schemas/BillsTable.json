@@ -166,7 +166,7 @@
     {
       "columnName": "LedgerName",
       "cellConfig": {
-        "width": "150px"
+        "width": "200px"
       },
       "dataListSource": "ledgers.LedgerName",
       "tableFooterDataListShow": true,
@@ -179,7 +179,7 @@
     {
       "columnName": "InvoiceDate",
       "cellConfig": {
-        "width": "50px"
+        "width": "100px"
       },
       "uiClasses": {
         "form": {
@@ -197,7 +197,7 @@
       "columnName": "PartyGSTIN",
       "dataListFillName": "PartyGSTIN",
       "cellConfig": {
-        "width": "50px"
+        "width": "100px"
       },
       "uiClasses": {
         "form": {

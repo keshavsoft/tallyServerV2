@@ -1,6 +1,6 @@
 import { createFooterCell } from "./createFooterCell.js";
 
-const startFunc = ({ keys, tr, options = {}, inDefaultRow, inTdClass,
+const startFunc = ({ keys, tr, options = {}, inDefaultRow,
     inShowDataList, onChangeFunc, inVisibleColumnsConfig }) => {
 
     const defaultRow = inDefaultRow;
@@ -15,12 +15,15 @@ const startFunc = ({ keys, tr, options = {}, inDefaultRow, inTdClass,
             onChangeFunc,
             showDataList: inShowDataList,
             inColumnsConfig: options.inColumnsConfig,
-            inTdClass,
+            inTdClass: loopColumn?.cellConfig?.tdClass,
             inAllowOnChange: loopColumn.allowOnChange,
             inOnChangeType: loopColumn.onChangeType,
             inOnKeyDown: loopColumn?.onKeyDown,
             inOnKeyDownType: loopColumn?.onKeyDownType,
-            inDefaultRow: defaultRow
+            inDefaultRow: defaultRow,
+            inType: loopColumn.type,
+            inRightAlign: loopColumn?.cellConfig?.rightAlign,
+            inWidth: loopColumn?.cellConfig?.width
         });
 
         tr.appendChild(createdFooterCell);
