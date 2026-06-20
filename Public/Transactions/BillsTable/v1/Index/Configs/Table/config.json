@@ -47,13 +47,15 @@
                 "width": "400px",
                 "tdClass": "px-4 py-2 border"
             },
-            "dataListSource": "ledgers.LedgerName",
+            "dataListSource": "LedgerName.LedgerName",
             "tableFooterDataListShow": true,
             "uiClasses": {
                 "form": {
                     "rowClass": "flex items-center space-x-4"
                 }
-            }
+            },
+            "allowOnChange": true,
+            "onChangeType": "onDataListChange"
         },
         {
             "columnName": "InvoiceDate",
@@ -79,7 +81,7 @@
             "title": "PartyGSTIN",
             "dataListFillName": "PartyGSTIN",
             "cellConfig": {
-                "width": "150px"
+                "width": "200px"
             },
             "uiClasses": {
                 "form": {

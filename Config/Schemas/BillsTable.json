@@ -204,6 +204,11 @@
           "rowClass": "flex items-center space-x-4 w-1/2"
         }
       }
+    },
+    {
+      "field": "pk",
+      "title": "pk",
+      "primary": true
     }
   ]
 }
