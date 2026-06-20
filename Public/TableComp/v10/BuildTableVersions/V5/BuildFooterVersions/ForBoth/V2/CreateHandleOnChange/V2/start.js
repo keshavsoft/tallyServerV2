@@ -28,7 +28,7 @@ const onDataListChange = ({ inCurrentTarget, inDataStore,
 }) => {
     const localCurrentTarget = inCurrentTarget;
     const inputName = localCurrentTarget.name;
-    debugger
+    // debugger
     const localCurrentValue = localCurrentTarget.value;
 
     const localFindRow = findRow({
