@@ -1,3 +1,5 @@
+import {  } from "../v2/";
+
 class KsTableFooterInput extends HTMLElement {
     connectedCallback() {
         const label = this.getAttribute("label") || "";

@@ -17,35 +17,38 @@ const createFooterInput = (args) => {
         inDefaultRow
     } = args;
 
-    const input = createInput({ key });
+    const input = createInput({
+        key, inOnKeyDown, inOnKeyDownType,
+        showDataList, inColumnsConfig
+    });
 
     if (inOnChangeType) {
         input.dataset.onChangeType = inOnChangeType;
     }
 
-    applyDataList({
-        input,
-        key,
-        showDataList,
-        inColumnsConfig
-    });
+    // applyDataList({
+    //     input,
+    //     key,
+    //     showDataList,
+    //     inColumnsConfig
+    // });
 
-    applyDefaultValue({
-        input,
-        inDefaultValue
-    });
+    // applyDefaultValue({
+    //     input,
+    //     inDefaultValue
+    // });
 
-    attachChangeEvent({
-        input,
-        onChangeFunc
-    });
+    // attachChangeEvent({
+    //     input,
+    //     onChangeFunc
+    // });
 
-    attachKeyDownEvent({
-        input,
-        inOnKeyDown,
-        inOnKeyDownType,
-        inDefaultRow
-    });
+    // attachKeyDownEvent({
+    //     input,
+    //     inOnKeyDown,
+    //     inOnKeyDownType,
+    //     inDefaultRow
+    // });
 
     return input;
 };

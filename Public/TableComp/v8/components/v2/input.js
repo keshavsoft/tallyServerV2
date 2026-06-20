@@ -1,21 +1,43 @@
+import attachKeyDownEvent from "./AttachKeyDownEvent/v2/start.js";
+
 class KsTableFooterInput extends HTMLElement {
     connectedCallback() {
-        const label = this.getAttribute("label") || "";
-        const name = this.getAttribute("name") || "";
-        const type = this.getAttribute("type") || "text";
+        const onKeyDown = this.ksOnKeyDown;
+        const onKeyDownType = this.ksOnKeyDownType;
+        const name = this.ksName || "";
+        const className = this.ksClassName || "w-full border rounded px-2 py-1";
 
-        this.innerHTML = `
-            <div class="flex items-center space-x-4 w-1/2">
-                <label class="w-36 text-sm font-medium">${label}</label>
-                <input
-                    type="${type}"
-                    name="${name}"
-                    class="flex-1 border rounded px-3 py-2">
-            </div>
-        `;
+        const type = this.ksType;
+        const placeholder = this.ksPlaceholder;
+        const showDataList = this.ksShowDataList;
+        const inColumnsConfig = this.ksInColumnsConfig;
+
+        const input = document.createElement("input");
+
+        input.type = type;
+        input.placeholder = placeholder;
+        input.name = name;
+        input.setAttribute("class", className);
+
+        const findColumn = inColumnsConfig.find(
+            element => element.columnName === name
+        );
+
+        if (showDataList && findColumn?.tableFooterDataListShow) {
+            input.setAttribute("list", `${name}List`);
+            input.dataset.dataListSource =
+                findColumn.dataListSource;
+        }
+
+        attachKeyDownEvent({
+            input, inOnKeyDown: onKeyDown,
+            inOnKeyDownType: onKeyDownType
+        });
+
+        this.appendChild(input);
     }
 }
 
-customElements.define("ks-tab-foot-input", KsTableFooterInput);
+customElements.define("ks-table-footer-input", KsTableFooterInput);
 
 export default {};
