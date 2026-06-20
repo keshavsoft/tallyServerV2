@@ -1,0 +1,272 @@
+{
+    "containerId": "kSTableContainer",
+    "tableName": "Ledger Names",
+    "mode": "create",
+    "layout": {
+        "verticalPosition": "top",
+        "type": "table"
+    },
+    "endPoints": {
+        "create": "",
+        "update": "",
+        "delete": "",
+        "read": "/Api/V1/ItemsTable/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {}
+    },
+    "options": {
+        "firstRow": {
+            "showSearch": true
+        },
+        "enabledSections": [
+            "vertical",
+            "table",
+            "footer"
+        ],
+        "table": {
+            "showSerial": true,
+            "showFooterRows": false,
+            "showBalance": false,
+            "showTotals": false,
+            "showActions": false,
+            "showFooter": false
+        }
+    },
+    "columnsConfig1": [
+        {
+            "columnName": "StockItemName",
+            "title": "StockItemName",
+            "field": "StockItemName",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "StockGstApplicable",
+            "title": "StockGstApplicable",
+            "field": "StockGstApplicable",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "StockBaseUnits",
+            "title": "StockBaseUnits",
+            "field": "StockBaseUnits",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isConsider": true
+        },
+        {
+            "columnName": "sgstRate",
+            "title": "sgstRate",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "cgstRate",
+            "title": "cgstRate",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "TaxPer",
+            "title": "TaxPer",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "Uom",
+            "title": "Uom",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockItemReservedName",
+            "title": "StockItemReservedName",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockItemType",
+            "title": "StockItemType",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockParentName",
+            "title": "StockParentName",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "columnName": "StockCategory",
+            "title": "StockCategory",
+            "cellConfig": {
+                "width": "150px"
+            }
+        },
+        {
+            "field": "pk",
+            "title": "pk",
+            "primary": true
+        }
+    ],
+    "callbacks": {
+        "table": {
+            "onDelete": "function",
+            "onReadFail": "function"
+        }
+    },
+    "columnsConfig2": [
+        {
+            "columnName": "StockItemName",
+            "title": "StockItemName",
+            "field": "StockItemName",
+            "cellConfig": {
+                "width": "200px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": false,
+            "dataListSource": "ItemNames.StockItemName"
+        },
+        {
+            "columnName": "RateInc",
+            "title": "RateInc",
+            "field": "RateInc",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": false
+        },
+        {
+            "columnName": "Qty",
+            "title": "Qty",
+            "field": "Qty",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": false,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Qty"
+        },
+        {
+            "columnName": "Amount",
+            "title": "Amount",
+            "field": "Amount",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": false,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Amount"
+        },
+        {
+            "field": "pk",
+            "title": "pk",
+            "primary": true,
+            "isVisible": false
+        }
+    ],
+    "columnsConfig": [
+        {
+            "columnName": "StockItemName",
+            "title": "StockItemName",
+            "field": "StockItemName",
+            "cellConfig": {
+                "width": "200px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "dataListSource": "ItemNames.StockItemName"
+        },
+        {
+            "columnName": "RateInc",
+            "title": "RateInc",
+            "field": "RateInc",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true
+        },
+        {
+            "columnName": "Qty",
+            "title": "Qty",
+            "field": "Qty",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Qty"
+        },
+        {
+            "columnName": "Amount",
+            "title": "Amount",
+            "field": "Amount",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Amount"
+        },
+        {
+            "field": "pk",
+            "title": "pk",
+            "primary": true,
+            "isVisible": false
+        }
+    ]
+}
