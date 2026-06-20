@@ -10,7 +10,7 @@
         "create": "",
         "update": "",
         "delete": "",
-        "read": "/Api/V1/StockItems/ShowAll",
+        "read": "/Api/V1/ItemsTable/ShowAll",
         "find": "",
         "filter": "",
         "dataLists": {}
@@ -129,7 +129,7 @@
             "onReadFail": "function"
         }
     },
-    "columnsConfig": [
+    "columnsConfig2": [
         {
             "columnName": "StockItemName",
             "title": "StockItemName",
@@ -188,6 +188,76 @@
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": false,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Amount"
+        },
+        {
+            "field": "pk",
+            "title": "pk",
+            "primary": true,
+            "isVisible": false
+        }
+    ],
+    "columnsConfig": [
+        {
+            "columnName": "StockItemName",
+            "title": "StockItemName",
+            "field": "StockItemName",
+            "cellConfig": {
+                "width": "200px"
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "dataListSource": "ItemNames.StockItemName"
+        },
+        {
+            "columnName": "RateInc",
+            "title": "RateInc",
+            "field": "RateInc",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true
+        },
+        {
+            "columnName": "Qty",
+            "title": "Qty",
+            "field": "Qty",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
+            "allowOnChange": true,
+            "onKeyDown": true,
+            "onKeyDownType": "Qty"
+        },
+        {
+            "columnName": "Amount",
+            "title": "Amount",
+            "field": "Amount",
+            "cellConfig": {
+                "width": "50px",
+                "rightAlign": true
+            },
+            "isConsider": true,
+            "verticalConfig": {},
+            "tableConfig": {},
+            "isVisible": true,
+            "tableFooterDataListShow": true,
             "allowOnChange": true,
             "onKeyDown": true,
             "onKeyDownType": "Amount"

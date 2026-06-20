@@ -2,7 +2,7 @@ import { highlight } from "./highlight.js";
 
 class KsTableBodyCell extends HTMLElement {
     connectedCallback() {
-        const value = this.ksValue;
+        const value = this.ksValue ?? "";
         const rightAlign = this.ksRightAlign;
         const width = this.ksWidth;
         const searchValue = this.ksSearchValue;
@@ -21,7 +21,7 @@ class KsTableBodyCell extends HTMLElement {
             this.innerHTML = value;
         } else {
 
-            td.innerHTML = highlight({
+            this.innerHTML = highlight({
                 text: value,
                 searchValue
             });
@@ -30,6 +30,8 @@ class KsTableBodyCell extends HTMLElement {
     }
 }
 
-customElements.define("ks-table-body-cell", KsTableBodyCell);
+if (!customElements.get("ks-table-body-cell")) {
+    customElements.define("ks-table-body-cell", KsTableBodyCell);
+}
 
 export default {};

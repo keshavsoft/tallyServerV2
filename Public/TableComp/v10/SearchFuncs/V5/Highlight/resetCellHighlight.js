@@ -1,8 +1,10 @@
 // /TableSearch/Highlight/resetCellHighlight.js
 
 const resetCellHighlight = (cell) => {
+    const target =
+        cell._highlightTarget || cell;
 
-    cell.innerHTML =
+    target.innerHTML =
         cell.dataset.originalHtml;
 
 };

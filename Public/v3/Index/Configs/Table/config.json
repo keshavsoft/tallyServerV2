@@ -29,7 +29,8 @@
             "showDataList": true,
             "showSave": true,
             "showActions": true,
-            "showSerial": true
+            "showSerial": true,
+            "showFooter": true
         }
     },
     "columnsConfig": [

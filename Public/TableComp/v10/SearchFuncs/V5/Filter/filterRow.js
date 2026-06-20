@@ -4,7 +4,6 @@ const filterRow = ({
     row,
     searchValue
 }) => {
-    console.log("row : ", row);
 
     const matched =
         row.dataset.searchText.includes(searchValue);

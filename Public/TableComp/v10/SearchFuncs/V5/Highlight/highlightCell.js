@@ -4,8 +4,10 @@ const highlightCell = ({
     cell,
     regex
 }) => {
+    const target =
+        cell._highlightTarget || cell;
 
-    cell.innerHTML =
+    target.innerHTML =
         cell.dataset.originalHtml.replace(
             regex,
             `<mark>$1</mark>`
