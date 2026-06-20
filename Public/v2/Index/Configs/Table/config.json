@@ -13,7 +13,10 @@
         "read": "/Api/v1/StockItems/ShowAll",
         "find": "",
         "filter": "",
-        "dataLists": {}
+        "dataLists": {},
+        "dataListEndpoints": {
+            "ItemName": "/Api/v1/StockItems/ShowAll"
+        }
     },
     "options": {
         "enabledSections": [
