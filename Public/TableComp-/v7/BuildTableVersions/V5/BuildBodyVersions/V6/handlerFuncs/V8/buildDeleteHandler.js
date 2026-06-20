@@ -1,9 +1,9 @@
-// import { afterMutation } from "../../afterMutation.js";
 import { deleteFromServer } from "./deleteFromServer.js";
 import runDeleteCallback from "./runDeleteCallback.js";
 import { showToast } from "./showToast.js";
 
-import afterMutation from "../../../../AfterMutation/V2/index.js";
+// import afterMutation from "../../../../AfterMutation/V2/index.js";
+import afterMutation from "../../../../AfterMutation/V4/index.js";
 
 const buildDeleteHandler = ({
     inServices,
@@ -14,6 +14,8 @@ const buildDeleteHandler = ({
     inShowSerial,
     inTableBody
 }) => {
+    console.log("aaaaaaaa : ", inConfig?.callbacks);
+
     const refreshAfterDelete = () => {
         afterMutation({
             inDataStore,

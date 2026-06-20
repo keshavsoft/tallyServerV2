@@ -7,10 +7,10 @@
         "type": "table"
     },
     "endPoints": {
-        "create": "/Api/V1/StockItems/insertGenPk",
+        "create": "/Api/v1/StockItems/insertGenPk",
         "update": "",
-        "delete": "",
-        "read": "/Api/V1/StockItems/ShowAll",
+        "delete": "/Api/v1/StockItems/del",
+        "read": "/Api/v1/StockItems/ShowAll",
         "find": "",
         "filter": "",
         "dataLists": {}
@@ -136,7 +136,7 @@
     ],
     "callbacks": {
         "table": {
-            "onDelete": "function",
+            "onDelete1": "function",
             "onReadFail": "function"
         }
     }

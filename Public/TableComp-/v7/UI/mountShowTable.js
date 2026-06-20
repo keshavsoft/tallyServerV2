@@ -78,7 +78,11 @@ const startFunc = ({
     buildBody({
         inVisibleColumnsConfig: visibleColumnsConfig,
         inTableBody: tableBody,
-        inData: data
+        inData: data,
+        inServices: services,
+        inEndPoints: endPoints,
+        inDataStore: dataStore,
+        inConfig
     });
     // debugger;
     if (inShowFooter) {
