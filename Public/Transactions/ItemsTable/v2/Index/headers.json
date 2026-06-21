@@ -8,6 +8,17 @@
     },
     "items": [
         {
+            "text": "Home",
+            "id": "HomeHtmlId",
+            "icon": [],
+            "uiClasses": {
+                "aClass": "",
+                "svgDivClass": "size-10"
+            },
+            "svgName": "home",
+            "href": "../../../index.html"
+        },
+        {
             "text": "Table",
             "id": "TableHtmlId",
             "icon": [],
