@@ -1,4 +1,4 @@
-import "../WebComponents/v2/nav/index.js";
+// import "../WebComponents/v2/nav/index.js";
 
 export const buildNav = ({ inTitle = {}, inUiClasses = {} }) => {
     const nav = document.createElement("ks-nav");
