@@ -44,7 +44,7 @@ class KSMenuItem extends HTMLElement {
                 .closest("nav")
                 ?.querySelector("#menu");
 
-            console.log("menu : ", menu);
+            // console.log("menu : ", menu);
 
             menu?.classList.add("hidden");
         });

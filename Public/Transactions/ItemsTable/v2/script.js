@@ -176,7 +176,7 @@ async function ensureKSTableComp() {
     };
 
     function isKSTableLoaded() {
-        console.log("aaaaaaaa : ", window.KSTableComp, window.KSHeader);
+        // console.log("aaaaaaaa : ", window.KSTableComp, window.KSHeader);
 
         return !!window.KSTableComp;
     };
