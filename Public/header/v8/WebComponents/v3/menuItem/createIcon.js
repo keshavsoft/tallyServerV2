@@ -13,7 +13,7 @@ export const createIcon = ({
 
         // div.className = "size-6 flex items-center justify-center";
         div.className = inSvgDivClass;
-        console.log("inSvgName----- : ", inSvgName, inSvgDivClass);
+        // console.log("inSvgName----- : ", inSvgName, inSvgDivClass);
 
         div.appendChild(icon);
 
