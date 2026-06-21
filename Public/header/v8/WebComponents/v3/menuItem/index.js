@@ -1,8 +1,5 @@
-import { createLi } from "./createLi.js";
 import { createAnchor } from "./createAnchor.js";
-import { createLabel } from "./createLabel.js";
 import { createIcon } from "./createIcon.js";
-// import { orchestrateMenuClick } from "./orchestrateMenuClick.js";
 
 class KSMenuItem extends HTMLElement {
     connectedCallback() {
