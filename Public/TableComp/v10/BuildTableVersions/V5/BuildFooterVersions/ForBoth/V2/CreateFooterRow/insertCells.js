@@ -4,10 +4,9 @@ const startFunc = ({ keys, tr, options = {}, inDefaultRow,
     inShowDataList, onChangeFunc, inVisibleColumnsConfig }) => {
 
     const defaultRow = inDefaultRow;
-    // debugger;
+
     inVisibleColumnsConfig.forEach(loopColumn => {
         const defaultValue = defaultRow ? defaultRow[loopColumn.columnName] : "";
-        // console.log("loopColumn: ", loopColumn);
 
         const createdFooterCell = createFooterCell({
             key: loopColumn.columnName,
@@ -23,7 +22,8 @@ const startFunc = ({ keys, tr, options = {}, inDefaultRow,
             inDefaultRow: defaultRow,
             inType: loopColumn.type,
             inRightAlign: loopColumn?.cellConfig?.rightAlign,
-            inWidth: loopColumn?.cellConfig?.width
+            inWidth: loopColumn?.cellConfig?.width,
+            inputClassName: loopColumn?.cellConfig?.uiClasses?.table?.tfoot?.inputClass
         });
 
         tr.appendChild(createdFooterCell);

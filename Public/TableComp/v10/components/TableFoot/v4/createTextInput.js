@@ -2,7 +2,7 @@ const createTextInput = ({
     inType,
     inPlaceholder,
     inName,
-    inClassName
+    inClassName, inputClassName
 }) => {
     const localInput =
         document.createElement("input");
@@ -10,7 +10,7 @@ const createTextInput = ({
     localInput.type = inType;
     localInput.placeholder = inPlaceholder;
     localInput.name = inName;
-    localInput.setAttribute("class", inClassName);
+    localInput.setAttribute("class", inputClassName || inClassName);
 
     return localInput;
 };

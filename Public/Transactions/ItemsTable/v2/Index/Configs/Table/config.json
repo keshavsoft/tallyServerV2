@@ -39,57 +39,6 @@
             "onReadFail": "function"
         }
     },
-    "columnsConfig1": [
-        {
-            "columnName": "LedgerName",
-            "title": "LedgerName",
-            "cellConfig": {
-                "width": "400px",
-                "tdClass": "px-4 py-2 border"
-            },
-            "dataListSource": "LedgerName.LedgerName",
-            "tableFooterDataListShow": true,
-            "uiClasses": {
-                "form": {
-                    "rowClass": "flex items-center space-x-4"
-                }
-            },
-            "allowOnChange": true,
-            "onChangeType": "onDataListChange"
-        },
-        {
-            "columnName": "InvoiceDate",
-            "title": "InvoiceDate",
-            "cellConfig": {
-                "width": "150px"
-            },
-            "uiClasses": {
-                "form": {
-                    "rowClass": "flex items-center space-x-4 w-1/2",
-                    "labelClass": "w-36 text-sm font-medium"
-                }
-            },
-            "isDate": true,
-            "defaultToday": true,
-            "isReadonly": false,
-            "autoFocus": false,
-            "isSearch": false,
-            "type": "date"
-        },
-        {
-            "columnName": "PartyGSTIN",
-            "title": "PartyGSTIN",
-            "dataListFillName": "PartyGSTIN",
-            "cellConfig": {
-                "width": "200px"
-            },
-            "uiClasses": {
-                "form": {
-                    "rowClass": "flex items-center space-x-4 w-1/2"
-                }
-            }
-        }
-    ],
     "columnsConfig": [
         {
             "columnName": "ItemName",
@@ -119,7 +68,8 @@
             "verticalConfig": {},
             "tableConfig": {},
             "isVisible": true,
-            "tableFooterDataListShow": true
+            "tableFooterDataListShow": true,
+            "type": "number"
         },
         {
             "columnName": "Qty",
@@ -127,7 +77,14 @@
             "field": "Qty",
             "cellConfig": {
                 "width": "50px",
-                "rightAlign": true
+                "rightAlign": true,
+                "uiClasses": {
+                    "table": {
+                        "tfoot": {
+                            "inputClass": "w-full border rounded px-2 py-1 text-xl"
+                        }
+                    }
+                }
             },
             "isConsider": true,
             "verticalConfig": {},
@@ -136,15 +93,23 @@
             "tableFooterDataListShow": true,
             "allowOnChange": true,
             "onKeyDown": true,
-            "onKeyDownType": "Qty"
+            "onKeyDownType": "Qty",
+            "type": "number"
         },
         {
             "columnName": "Amount",
             "title": "Amount",
             "field": "Amount",
             "cellConfig": {
-                "width": "50px",
-                "rightAlign": true
+                "width": "100px",
+                "rightAlign": true,
+                "uiClasses": {
+                    "table": {
+                        "tfoot": {
+                            "inputClass": "w-full border rounded px-2 py-1 text-lg"
+                        }
+                    }
+                }
             },
             "isConsider": true,
             "verticalConfig": {},
@@ -153,7 +118,8 @@
             "tableFooterDataListShow": true,
             "allowOnChange": true,
             "onKeyDown": true,
-            "onKeyDownType": "Amount"
+            "onKeyDownType": "Amount",
+            "type": "number"
         },
         {
             "field": "pk",

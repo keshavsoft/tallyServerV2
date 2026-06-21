@@ -1,6 +1,8 @@
 const getInputOptions = ({ inElement }) => {
     const localName =
         inElement.ksName || "";
+    console.log("inElement : ", inElement.ksInputClassName);
+
 
     return {
         inType: inElement.ksType || "text",
@@ -15,7 +17,8 @@ const getInputOptions = ({ inElement }) => {
         inOnKeyDown: inElement.ksOnKeyDown,
         inOnKeyDownType: inElement.ksOnKeyDownType,
         inRightAlign: inElement.ksRightAlign,
-        inWidth: inElement.ksWidth
+        inWidth: inElement.ksWidth,
+        inputClassName: inElement.ksInputClassName
     };
 };
 
