@@ -73,9 +73,9 @@ async function ensureKSHeader() {
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v4.7/ksheader.js");
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.8/ksheader.js");
 
-            console.log("KSHeader loaded from git : tailwind-header-dom");
+            console.log("KSHeader loaded from git : tailwind-header-dom-5.8");
 
             if (fromPromise) return true;
         } catch { return false };
