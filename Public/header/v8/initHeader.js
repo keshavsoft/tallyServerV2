@@ -1,5 +1,5 @@
-import "./WebComponents/v5/menuItem/index.js";
-import "./WebComponents/v5/nav/index.js";
+import "./WebComponents/v6/menuItem/index.js";
+import "./WebComponents/v6/nav/index.js";
 
 import { buildMenuItem } from "./BuildMenuItem/buildMenuItem.js";
 import { buildNav } from "./BuildNav/buildNav.js";
