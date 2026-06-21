@@ -22,31 +22,37 @@ const createInnerDiv = ({ inClassName }) => {
     return innerDiv;
 };
 
-const createBrand = ({ inTitleId, inTitle }) => {
+const getAttributeValue = ({ inElement, inName, inDefaultValue }) => {
+    const value = inElement.getAttribute(inName);
+
+    if (value === null) return inDefaultValue;
+
+    return value;
+};
+
+const createBrand = ({ inTitleId, inTitle, inClassName }) => {
     const brand = document.createElement("div");
 
-    brand.className = "text-xl font-semibold";
+    brand.className = inClassName;
     brand.id = inTitleId || "titlehtmlId";
     brand.innerText = inTitle || "KeshavSoft";
 
     return brand;
 };
 
-const createMenu = ({ inUlClass }) => {
+const createMenu = ({ inClassName, inUlClass }) => {
     const menu = document.createElement("ul");
 
     menu.id = "menu";
-    menu.className = `w-full hidden flex flex-col space-y-2 mt-4
-    md:flex md:flex-row md:space-y-0 md:gap-4
-    md:mt-0 md:w-auto md:flex-wrap ${inUlClass || ""}`;
+    menu.className = `${inClassName} ${inUlClass || ""}`;
 
     return menu;
 };
 
-const createHamburger = ({ inMenu }) => {
+const createHamburger = ({ inMenu, inClassName }) => {
     const button = document.createElement("button");
 
-    button.className = "text-xl px-4 py-1 md:hidden";
+    button.className = inClassName;
     button.innerText = "☰";
 
     button.addEventListener("click", () => {
@@ -58,31 +64,60 @@ const createHamburger = ({ inMenu }) => {
 
 const buildNav = ({ inElement }) => {
     const nav = createNav({
-        inClassName: "bg-gray-800 text-white"
+        inClassName: getAttributeValue({
+            inElement,
+            inName: "ks-nav-class",
+            inDefaultValue: "bg-gray-800 text-white"
+        })
     });
 
     const outerDiv = createOuterDiv({
-        inClassName: `mx-auto px-3 py-3
+        inClassName: getAttributeValue({
+            inElement,
+            inName: "ks-outer-class",
+            inDefaultValue: `mx-auto px-3 py-3
     max-w-3xl
     lg:max-w-5xl
     xl:max-w-full xl:px-10`
+        })
     });
 
     const innerDiv = createInnerDiv({
-        inClassName: "flex flex-wrap items-center justify-between"
+        inClassName: getAttributeValue({
+            inElement,
+            inName: "ks-inner-class",
+            inDefaultValue: "flex flex-wrap items-center justify-between"
+        })
     });
 
     const brand = createBrand({
         inTitleId: inElement.getAttribute("ks-title-id"),
-        inTitle: inElement.getAttribute("ks-title")
+        inTitle: inElement.getAttribute("ks-title"),
+        inClassName: getAttributeValue({
+            inElement,
+            inName: "ks-brand-class",
+            inDefaultValue: "text-xl font-semibold"
+        })
     });
 
     const menu = createMenu({
+        inClassName: getAttributeValue({
+            inElement,
+            inName: "ks-menu-class",
+            inDefaultValue: `w-full hidden flex flex-col space-y-2 mt-4
+    md:flex md:flex-row md:space-y-0 md:gap-4
+    md:mt-0 md:w-auto md:flex-wrap`
+        }),
         inUlClass: inElement.getAttribute("ks-ul-class")
     });
 
     const button = createHamburger({
-        inMenu: menu
+        inMenu: menu,
+        inClassName: getAttributeValue({
+            inElement,
+            inName: "ks-button-class",
+            inDefaultValue: "text-xl px-4 py-1 md:hidden"
+        })
     });
 
     innerDiv.append(
