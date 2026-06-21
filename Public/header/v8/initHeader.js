@@ -1,4 +1,4 @@
-import "./WebComponents/v2/menuItem/index.js";
+import "./WebComponents/v3/menuItem/index.js";
 
 import { buildMenuItem } from "./BuildMenuItem/buildMenuItem.js";
 import { buildNav } from "./BuildNav/buildNav.js";
