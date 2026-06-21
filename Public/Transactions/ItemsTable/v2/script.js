@@ -15,7 +15,8 @@ async function ensureTailwind() {
 
     const tryLocal = async () => {
         try {
-            await loadCss("./tailwind-3.css");
+            // await loadCss("./tailwind-3.css");
+            await loadCss("./tailwind-3-min.css");
 
             console.log("Tailwind loaded locally");
             return true;
@@ -175,6 +176,8 @@ async function ensureKSTableComp() {
     };
 
     function isKSTableLoaded() {
+        console.log("aaaaaaaa : ", window.KSTableComp, window.KSHeader);
+
         return !!window.KSTableComp;
     };
 
@@ -207,7 +210,7 @@ async function ensureKSTableComp() {
     };
 
     if (isKSTableLoaded()) {
-        console.log("KSTable loaded from Firefox Extension");
+        console.log("KSTableComp loaded from Firefox Extension");
         return;
     };
 
@@ -277,6 +280,8 @@ await ensureKSHeader();
 
 // ensureKSTable().then();
 
-ensureKSTableComp().then();
+// ensureKSTableComp().then();
 
-ensureKSVertical().then();
+// ensureKSVertical().then();
+await ensureKSTableComp();
+await ensureKSVertical();
