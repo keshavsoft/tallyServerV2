@@ -1,8 +1,7 @@
 const getInputOptions = ({ inElement }) => {
     const localName =
         inElement.ksName || "";
-    console.log("inElement : ", inElement.ksInputClassName);
-
+    // console.log("inElement : ", inElement.ksInputClassName);
 
     return {
         inType: inElement.ksType || "text",

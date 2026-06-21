@@ -61,8 +61,15 @@
             "title": "RateInc",
             "field": "RateInc",
             "cellConfig": {
-                "width": "50px",
-                "rightAlign": true
+                "width": "75px",
+                "rightAlign": true,
+                "uiClasses": {
+                    "table": {
+                        "tfoot": {
+                            "inputClass": "w-full border rounded px-2 py-1 text-xl"
+                        }
+                    }
+                }
             },
             "isConsider": true,
             "verticalConfig": {},
@@ -76,7 +83,7 @@
             "title": "Qty",
             "field": "Qty",
             "cellConfig": {
-                "width": "50px",
+                "width": "60px",
                 "rightAlign": true,
                 "uiClasses": {
                     "table": {
@@ -101,7 +108,7 @@
             "title": "Amount",
             "field": "Amount",
             "cellConfig": {
-                "width": "100px",
+                "width": "75px",
                 "rightAlign": true,
                 "uiClasses": {
                     "table": {

@@ -20,7 +20,7 @@ class KsTableFooterInput extends HTMLElement {
 
         const localInput =
             createTextInput(localOptions);
-        console.log("localInput : ", localInput, localOptions);
+        // console.log("localInput : ", localInput, localOptions);
 
         applyDataList({
             inInput: localInput,
