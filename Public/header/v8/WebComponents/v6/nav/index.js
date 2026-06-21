@@ -1,4 +1,6 @@
 import composeNavigationStory from "./composeNavigationStory.js";
+import navDefaults from "./navDefaults.js";
+import navUsage from "./navUsage.js";
 
 class KSNav extends HTMLElement {
     connectedCallback() {
@@ -14,9 +16,16 @@ class KSNav extends HTMLElement {
     }
 }
 
+KSNav.defaults = navDefaults;
+KSNav.usage = navUsage;
+
 customElements.define(
     "ks-nav",
     KSNav
 );
 
 export default KSNav;
+export {
+    navDefaults,
+    navUsage
+};

@@ -10,7 +10,6 @@ const composeNavigationStory = ({ inElement }) => {
     const story = readNavStoryFromElement({
         inElement
     });
-    console.log("story : ", story);
 
     const nav = createNavigationBar({
         inClassName: story.navClass
