@@ -1,10 +1,12 @@
 {
     "uiClasses": {
-        "ulClass1": "[&_svg]:size-6"
+        "ulClass1": "[&_svg]:size-6",
+        "navClass1": "bg-red-800 text-white",
+        "brandClass1": "text-sm"
     },
     "title": {
         "text": "Bill Items",
-        "htmlId": "htmlId"
+        "htmlId": "htmlId--"
     },
     "items": [
         {
