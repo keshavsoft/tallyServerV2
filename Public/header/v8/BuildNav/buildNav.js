@@ -7,5 +7,7 @@ export const buildNav = ({ inTitle = {}, inUiClasses = {} }) => {
     nav.setAttribute("ks-title-id", inTitle.htmlId || "");
     nav.setAttribute("ks-ul-class", inUiClasses?.ulClass || "");
 
+    nav.setAttribute("ks-nav-class", "bg-blue-800 text-white");
+
     return nav;
 };
