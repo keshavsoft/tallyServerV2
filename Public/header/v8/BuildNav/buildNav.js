@@ -1,31 +1,11 @@
-// /header/v2/buildNav.js
-
-import { buildBrand } from "./buildBrand.js";
-import { buildHamburger } from "./buildHamburger.js";
-import { buildMenu } from "./buildMenu.js";
-import { buildWrapper } from "./buildWrapper.js";
+import "../WebComponents/v2/nav/index.js";
 
 export const buildNav = ({ inTitle = {}, inUiClasses = {} }) => {
+    const nav = document.createElement("ks-nav");
 
-    const {
-        nav,
-        innerDiv
-    } = buildWrapper();
-
-    innerDiv.appendChild(
-        buildBrand({
-            inHeading: inTitle.text,
-            inHtmlId: inTitle.htmlId
-        })
-    );
-
-    innerDiv.appendChild(
-        buildHamburger()
-    );
-
-    innerDiv.appendChild(
-        buildMenu({ inUlClass: inUiClasses?.ulClass })
-    );
+    nav.setAttribute("ks-title", inTitle.text || "");
+    nav.setAttribute("ks-title-id", inTitle.htmlId || "");
+    nav.setAttribute("ks-ul-class", inUiClasses?.ulClass || "");
 
     return nav;
 };
