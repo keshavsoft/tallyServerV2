@@ -1,1 +1,1 @@
-DELETE http://localhost:3001/api/v1/StockItems/find/5
+DELETE http://localhost:3025/api/v1/StockItems/find/5
