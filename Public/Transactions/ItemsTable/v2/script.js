@@ -1,3 +1,16 @@
+function loadScriptAsModuleCommon(src) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+
+        script.src = src;
+        script.onload = () => resolve(true);
+        script.onerror = () => reject(new Error(`Failed to load: ${src}`));
+        script.type = "module";
+
+        document.head.appendChild(script);
+    });
+};
+
 async function ensureTailwind() {
     function loadCss(href) {
         return new Promise((resolve, reject) => {
@@ -54,26 +67,13 @@ async function ensureTailwind() {
 };
 
 async function ensureKSHeader() {
-    function loadScriptAsModule(src) {
-        return new Promise((resolve, reject) => {
-            const script = document.createElement("script");
-
-            script.src = src;
-            script.onload = () => resolve(true);
-            script.onerror = () => reject(new Error(`Failed to load: ${src}`));
-            script.type = "module";
-
-            document.head.appendChild(script);
-        });
-    };
-
     function isKSTableLoaded() {
         return !!window.KSHeader;
     };
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.10/ksheader.js");
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.10/ksheader.js");
 
             console.log("KSHeader loaded from git : tailwind-header-dom-5.10");
 
@@ -85,9 +85,9 @@ async function ensureKSHeader() {
 
     async function tryLocal() {
         try {
-            const fromPromise = await loadScriptAsModule("/header/v10/initHeader.js");
+            const fromPromise = await loadScriptAsModuleCommon("/header/v11/initHeader.js");
 
-            console.log("KSHeader loaded from local : header-v10");
+            console.log("KSHeader loaded from local : header-v11");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -213,6 +213,35 @@ async function ensureKSMenuItem() {
     if (await tryGitHub()) return;
 
     throw new Error("KSTable could not be loaded");
+};
+
+async function ensureKSComponents() {
+    async function tryMenu() {
+        try {
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-menuItem/Public/v1/KSMenuItem.js");
+
+            console.log("KSMenuItem loaded from git : ks-web-comp-menuItem-1");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    async function tryNav() {
+        try {
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-nav/Public/v4/ksCompNav.js");
+
+            console.log("ksCompNav loaded from git : ks-web-comp-nav-4");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    tryMenu().then();
+    tryNav().then();
 };
 
 async function ensureKSTable() {
@@ -383,15 +412,12 @@ async function ensureKSVertical() {
     throw new Error("KSVertical could not be loaded");
 };
 
-await ensureTailwind();
-await ensureKSCompNav();
-await ensureKSMenuItem();
+ensureTailwind().then();
+// await ensureKSCompNav();
+// await ensureKSMenuItem();
+ensureKSComponents().then();
 
 await ensureKSHeader();
-// ensureKSTable().then();
 
-// ensureKSTableComp().then();
-
-// ensureKSVertical().then();
 await ensureKSTableComp();
 await ensureKSVertical();
