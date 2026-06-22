@@ -85,9 +85,63 @@ async function ensureKSHeader() {
 
     async function tryLocal() {
         try {
-            const fromPromise = await loadScriptAsModule("/header/v8/initHeader.js");
+            const fromPromise = await loadScriptAsModule("/header/v9/initHeader.js");
 
-            console.log("KSHeader loaded from local : header-v8");
+            console.log("KSHeader loaded from local : header-v9");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    if (isKSTableLoaded()) {
+        console.log("KSHeader loaded from Firefox Extension");
+        return;
+    };
+
+    if (await tryLocal()) return;
+
+    if (await tryGitHub()) return;
+
+    throw new Error("KSTable could not be loaded");
+};
+
+async function ensureKSCompNav() {
+    function loadScriptAsModule(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+
+            script.src = src;
+            script.onload = () => resolve(true);
+            script.onerror = () => reject(new Error(`Failed to load: ${src}`));
+            script.type = "module";
+
+            document.head.appendChild(script);
+        });
+    };
+
+    function isKSTableLoaded() {
+        return !!window.KSHeader;
+    };
+
+    async function tryGitHub() {
+        try {
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.8/ksheader.js");
+
+            console.log("KSHeader loaded from git : tailwind-header-dom-5.8");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    async function tryLocal() {
+        try {
+            const fromPromise = await loadScriptAsModule("/header/v9/initHeader.js");
+
+            console.log("KSHeader loaded from local : header-v9");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -276,8 +330,9 @@ async function ensureKSVertical() {
 };
 
 await ensureTailwind();
-await ensureKSHeader();
+await ensureKSCompNav();
 
+await ensureKSHeader();
 // ensureKSTable().then();
 
 // ensureKSTableComp().then();
