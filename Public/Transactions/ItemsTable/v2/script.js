@@ -73,9 +73,9 @@ async function ensureKSHeader() {
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.8/ksheader.js");
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.9/ksheader.js");
 
-            console.log("KSHeader loaded from git : tailwind-header-dom-5.8");
+            console.log("KSHeader loaded from git : tailwind-header-dom-5.9");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -122,14 +122,14 @@ async function ensureKSCompNav() {
     };
 
     function isKSTableLoaded() {
-        return !!window.KSHeader;
+        return !!window.KSNav;
     };
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.8/ksheader.js");
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/ks-web-comp-nav/Public/v4/ksCompNav.js");
 
-            console.log("KSHeader loaded from git : tailwind-header-dom-5.8");
+            console.log("KSNav loaded from git : ks-web-comp-nav-4");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -154,7 +154,7 @@ async function ensureKSCompNav() {
         return;
     };
 
-    if (await tryLocal()) return;
+    // if (await tryLocal()) return;
 
     if (await tryGitHub()) return;
 
