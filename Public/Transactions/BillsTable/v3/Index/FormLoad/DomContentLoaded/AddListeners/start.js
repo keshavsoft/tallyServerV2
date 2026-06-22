@@ -7,6 +7,7 @@ import userHeaderHtmlId from "./UserHeaderHtmlId/start.js";
 import escapeKey from "./EscapeKey/start.js";
 import CreateHtmlId from "./CreateHtmlId/start.js";
 import TableHtmlId from "./TableHtmlId/start.js";
+import FindHtmlId from "./FindHtmlId/start.js";
 
 const hookAllListeners = () => {
     showAllHtmlId();
@@ -18,6 +19,7 @@ const hookAllListeners = () => {
     escapeKey();
     CreateHtmlId();
     TableHtmlId();
+    FindHtmlId();
 };
 
 export { hookAllListeners };

@@ -51,6 +51,16 @@
             "svgName": "home"
         },
         {
+            "text": "Find",
+            "id": "FindHtmlId",
+            "icon": [],
+            "uiClasses": {
+                "aClass": "",
+                "svgDivClass": "size-10"
+            },
+            "svgName": "search"
+        },
+        {
             "text": "WithSerial",
             "id": "WithSerialHtmlId",
             "icon": [],
