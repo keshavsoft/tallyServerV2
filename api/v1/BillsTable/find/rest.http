@@ -1,1 +1,1 @@
-GET http://localhost:3025/api/v1/BillsTable/find
+GET http://localhost:3025/api/v1/BillsTable/find/1

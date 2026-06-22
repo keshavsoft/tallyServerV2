@@ -162,55 +162,6 @@
   },
   "PrimarykeyTableNames": [],
   "PrimarykeyTables": [],
-  "columnsConfig1": [
-    {
-      "columnName": "LedgerName",
-      "cellConfig": {
-        "width": "200px"
-      },
-      "dataListSource": "ledgers.LedgerName",
-      "tableFooterDataListShow": true,
-      "uiClasses": {
-        "form": {
-          "rowClass": "flex items-center space-x-4"
-        }
-      }
-    },
-    {
-      "columnName": "InvoiceDate",
-      "cellConfig": {
-        "width": "100px"
-      },
-      "uiClasses": {
-        "form": {
-          "rowClass": "flex items-center space-x-4 w-1/2",
-          "labelClass": "w-36 text-sm font-medium"
-        }
-      },
-      "isDate": true,
-      "defaultToday": true,
-      "isReadonly": false,
-      "autoFocus": false,
-      "isSearch": false
-    },
-    {
-      "columnName": "PartyGSTIN",
-      "dataListFillName": "PartyGSTIN",
-      "cellConfig": {
-        "width": "100px"
-      },
-      "uiClasses": {
-        "form": {
-          "rowClass": "flex items-center space-x-4 w-1/2"
-        }
-      }
-    },
-    {
-      "field": "pk",
-      "title": "pk",
-      "primary": true
-    }
-  ],
   "columnsConfig": [
     {
       "columnName": "LedgerName",
@@ -260,6 +211,11 @@
           "rowClass": "flex items-center space-x-4 w-1/2"
         }
       }
+    },
+    {
+      "field": "pk",
+      "title": "pk",
+      "primary": true
     }
   ]
 }

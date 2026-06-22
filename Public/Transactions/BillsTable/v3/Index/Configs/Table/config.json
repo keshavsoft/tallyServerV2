@@ -6,18 +6,6 @@
         "verticalPosition": "top",
         "type": "table"
     },
-    "endPoints1": {
-        "create": "/Api/v1/BillsTable/insertGenPk",
-        "update": "",
-        "delete": "/Api/v1/BillsTable/del",
-        "read": "/Api/v1/BillsTable/ShowAll",
-        "find": "",
-        "filter": "",
-        "dataLists": {},
-        "dataListEndpoints": {
-            "LedgerName": "/Api/v1/LedgerNames/ShowAll"
-        }
-    },
     "options": {
         "enabledSections": [
             "vertical",
@@ -91,15 +79,15 @@
         }
     ],
     "endPoints": {
-        "create": "/Api/v1/ItemsTable/insertGenPk",
+        "create": "/Api/v1/BillsTable/insertGenPk",
         "update": "",
-        "delete": "/Api/v1/ItemsTable/del",
+        "delete": "/Api/v1/BillsTable/del",
         "read": "/Api/V1/BillsTable/ShowAll",
         "find": "",
         "filter": "",
         "dataLists": {},
         "dataListEndpoints": {
-            "ItemName": "/Api/v1/StockItems/ShowAll"
+            "LedgerName": "/Api/v1/LedgerNames/ShowAll"
         }
     }
 }
