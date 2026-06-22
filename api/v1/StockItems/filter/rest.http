@@ -1,0 +1,7 @@
+POST http://localhost:3025/api/v1/StockItems/filter
+Content-Type: application/json
+
+{
+  "sgstRate": " 2.50",
+   "StockBaseUnits": "Mts"
+}
