@@ -270,9 +270,9 @@ async function ensureKSVertical() {
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-vertical-dom/Public/v4/ksvertical.js");
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-vertical-dom/Public/v5/ksvertical.js");
 
-            console.log("KSVertical loaded from git : tailwind-vertical-dom");
+            console.log("KSVertical loaded from git : tailwind-vertical-dom : 5");
 
             if (fromPromise) return true;
         } catch { return false };
