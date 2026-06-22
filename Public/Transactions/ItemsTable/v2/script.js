@@ -73,9 +73,9 @@ async function ensureKSHeader() {
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.9/ksheader.js");
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-header-dom/Public/v5.10/ksheader.js");
 
-            console.log("KSHeader loaded from git : tailwind-header-dom-5.9");
+            console.log("KSHeader loaded from git : tailwind-header-dom-5.10");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -85,9 +85,9 @@ async function ensureKSHeader() {
 
     async function tryLocal() {
         try {
-            const fromPromise = await loadScriptAsModule("/header/v9/initHeader.js");
+            const fromPromise = await loadScriptAsModule("/header/v10/initHeader.js");
 
-            console.log("KSHeader loaded from local : header-v9");
+            console.log("KSHeader loaded from local : header-v10");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -130,6 +130,60 @@ async function ensureKSCompNav() {
             const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/ks-web-comp-nav/Public/v4/ksCompNav.js");
 
             console.log("KSNav loaded from git : ks-web-comp-nav-4");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    async function tryLocal() {
+        try {
+            const fromPromise = await loadScriptAsModule("/header/v9/initHeader.js");
+
+            console.log("KSHeader loaded from local : header-v9");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    if (isKSTableLoaded()) {
+        console.log("KSHeader loaded from Firefox Extension");
+        return;
+    };
+
+    // if (await tryLocal()) return;
+
+    if (await tryGitHub()) return;
+
+    throw new Error("KSTable could not be loaded");
+};
+
+async function ensureKSMenuItem() {
+    function loadScriptAsModule(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+
+            script.src = src;
+            script.onload = () => resolve(true);
+            script.onerror = () => reject(new Error(`Failed to load: ${src}`));
+            script.type = "module";
+
+            document.head.appendChild(script);
+        });
+    };
+
+    function isKSTableLoaded() {
+        return !!window.KSMenuItem;
+    };
+
+    async function tryGitHub() {
+        try {
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/ks-web-comp-menuItem/Public/v1/KSMenuItem.js");
+
+            console.log("KSMenuItem loaded from git : ks-web-comp-menuItem-1");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -331,6 +385,7 @@ async function ensureKSVertical() {
 
 await ensureTailwind();
 await ensureKSCompNav();
+await ensureKSMenuItem();
 
 await ensureKSHeader();
 // ensureKSTable().then();
