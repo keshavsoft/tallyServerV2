@@ -51,6 +51,16 @@
             "svgName": "home"
         },
         {
+            "text": "Split",
+            "id": "SplitHtmlId",
+            "icon": [],
+            "uiClasses": {
+                "aClass": "",
+                "svgDivClass": "size-10"
+            },
+            "svgName": "home"
+        },
+        {
             "text": "WithSerial",
             "id": "WithSerialHtmlId",
             "icon": [],

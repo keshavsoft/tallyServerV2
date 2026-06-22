@@ -132,8 +132,21 @@ async function ensureKSComponents() {
         return false;
     };
 
+    async function tryVertical() {
+        try {
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-vertical/Public/v1.3/KSVerticalComp.js");
+
+            console.log("KSVerticalComp loaded from git : ks-web-comp-vertical-4");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
     tryMenu().then();
     tryNav().then();
+    tryVertical().then();
 };
 
 async function ensureKSTable() {
@@ -282,9 +295,9 @@ async function ensureKSVertical() {
 
     async function tryLocal() {
         try {
-            const fromPromise = await loadScriptAsModule("/VerticalComp/v5/entry.js");
+            const fromPromise = await loadScriptAsModule("/VerticalComp/v6/entry.js");
 
-            console.log("KSVertical loaded from Local Server : VerticalComp/v5");
+            console.log("KSVertical loaded from Local Server : VerticalComp/v6");
 
             if (fromPromise) return true;
         } catch { return false };
