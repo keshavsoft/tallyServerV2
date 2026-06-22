@@ -23,9 +23,9 @@ const loadInitialData = async ({
             inEndPoint: endPoints.read
         });
 
-        if (!Array.isArray(dataFromFetch)) {
-            throw new Error("read endpoint must return array");
-        };
+        // if (!Array.isArray(dataFromFetch)) {
+        //     throw new Error("read endpoint must return array");
+        // };
 
         dataStore.setData(dataFromFetch);
     };

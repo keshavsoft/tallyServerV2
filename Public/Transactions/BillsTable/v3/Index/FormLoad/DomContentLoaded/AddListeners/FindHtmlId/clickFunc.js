@@ -9,7 +9,7 @@ const clickFuncToRun = ({ inCurrentTarget }) => {
 
     if (pk === null || pk.trim() === "") return;
 
-    buildTable().then();
+    buildTable(pk).then();
 };
 
 const applyActive = ({ inCurrentTarget }) => {

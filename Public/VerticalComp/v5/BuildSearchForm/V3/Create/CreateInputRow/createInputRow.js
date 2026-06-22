@@ -87,7 +87,7 @@ const createInputRow = ({
 }) => {
     const col = inCol.columnName;
     const dataListFillName = inCol.dataListFillName;
-    // console.log("caught:", inCol);
+    console.log("caught:", inDefaultRow);
     let row;
 
     if ("verticalConfig" in inCol) {
@@ -105,6 +105,7 @@ const createInputRow = ({
         row.setAttribute("name", col);
         row.setAttribute("list", `${col}List`);
         row.setAttribute("source", col);
+        row.setAttribute("ksInValue", inDefaultRow[col]);
 
         row.dataset.dataListSource = inDataListSource;
 

@@ -42,7 +42,8 @@
                 }
             },
             "allowOnChange": true,
-            "onChangeType": "onDataListChange"
+            "onChangeType": "onDataListChange",
+            "verticalConfig": {}
         },
         {
             "columnName": "InvoiceDate",
@@ -81,7 +82,8 @@
         "create": "/Api/v1/BillsTable/insertGenPk",
         "update": "",
         "delete": "/Api/v1/BillsTable/del",
-        "read": "/Api/v1/BillsTable/ShowAll",
+        "read": "/Api/v1/BillsTable/find/<pk>",
+        "findFromParams": "/Api/v1/BillsTable/find/<pk>",
         "find": "",
         "filter": "",
         "dataLists": {},
