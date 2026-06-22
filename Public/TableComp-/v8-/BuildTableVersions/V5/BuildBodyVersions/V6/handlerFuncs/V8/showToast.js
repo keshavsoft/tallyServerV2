@@ -16,7 +16,7 @@ const showToast = ({ message }) => {
 
     setTimeout(() => {
         toastDiv.remove();
-    }, 3000);
+    }, 3025);
 };
 
 export { showToast };
