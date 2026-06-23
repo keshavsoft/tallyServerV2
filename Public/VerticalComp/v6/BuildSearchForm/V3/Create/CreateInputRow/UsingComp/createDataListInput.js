@@ -72,12 +72,12 @@ const startFunc = ({
     //         inCurrentInput: row
     //     });
     // };
-
+    const defaultValue = col in inDefaultRow ? inDefaultRow[col] : "";
     row.setAttribute("label", inCol.title);
     row.setAttribute("ksName", col);
     row.setAttribute("list", `${col}List`);
     row.setAttribute("source", col);
-    row.setAttribute("ksInValue", inDefaultRow[col]);
+    row.setAttribute("ksInValue", defaultValue);
     row.setAttribute("ksDataListSource", inDataListSource);
 
     row.dataStore = inDataStore;

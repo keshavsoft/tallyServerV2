@@ -7,6 +7,7 @@ import { createRowContainer } from "./createRowContainer.js";
 import { attachToInputs } from "./attachToInputs.js";
 import { assembleRow } from "./assembleRow.js";
 import createDataListInput from "./UsingComp/createDataListInput.js";
+import defaultInput from "./UsingComp/defaultInput.js";
 
 import { createInput } from "./CreateInput/V2/createInput.js";
 
@@ -88,13 +89,19 @@ const createInputRow = ({
 }) => {
     const col = inCol.columnName;
     const dataListFillName = inCol.dataListFillName;
-    console.log("caught----------", col);
+    // console.log("caught----------", col);
 
     let row;
 
     if ("verticalConfig" in inCol) {
-        console.log("caught----------");
-        return createDataListInput({ inCol, inDefaultRow, inDataListSource, inDataStore });
+        if ("dataListSource" in inCol) {
+            return createDataListInput({ inCol, inDefaultRow, inDataListSource, inDataStore });
+        } else {
+            return defaultInput({
+                inCol, inDefaultRow, inDataStore,
+                inDataListFillName: dataListFillName
+            });
+        };
     } else {
         switch (col) {
             case "LedgerName":
@@ -112,31 +119,35 @@ const createInputRow = ({
                 break;
 
             default:
-                row = createRowContainer({ rowClass: inRowClass });
+                // row = createRowContainer({ rowClass: inRowClass });
 
-                const value = resolveValue({ col, defaultRow: inDefaultRow });
-                // debugger;
-                const label = createLabel({ col, labelClass: inLabelClass });
+                // const value = resolveValue({ col, defaultRow: inDefaultRow });
+                // // debugger;
+                // const label = createLabel({ col, labelClass: inLabelClass });
 
-                const input = createInput({
-                    col,
-                    inputClass: inInputClass,
-                    value,
-                    inShowDataList: inCol.tableFooterDataListShow || inCol.isSearchable,
-                    isDate,
-                    defaultToday,
-                    isReadonly,
-                    autoFocus,
-                    isSearch,
-                    onChangeFunc,
-                    inDataListSource,
-                    inDataStore,
-                    inDataListFillName: dataListFillName
-                });
+                // const input = createInput({
+                //     col,
+                //     inputClass: inInputClass,
+                //     value,
+                //     inShowDataList: inCol.tableFooterDataListShow || inCol.isSearchable,
+                //     isDate,
+                //     defaultToday,
+                //     isReadonly,
+                //     autoFocus,
+                //     isSearch,
+                //     onChangeFunc,
+                //     inDataListSource,
+                //     inDataStore,
+                //     inDataListFillName: dataListFillName
+                // });
 
-                attachToInputs({ inputs: inInputs, col, input });
+                // attachToInputs({ inputs: inInputs, col, input });
 
-                return assembleRow({ row, label, input });
+                // return assembleRow({ row, label, input });
+
+                // break;
+
+                return defaultInput({ inCol, inDefaultRow, inDataStore });
 
                 break;
         };
