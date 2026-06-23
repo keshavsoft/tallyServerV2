@@ -11,7 +11,7 @@ class KsDataListInput extends HTMLElement {
             inName: this.getAttribute("ksName") || "",
             inList: this.getAttribute("list") || "",
             inSource: this.getAttribute("source") || "",
-            inValue: this.getAttribute("ksInValue") || "------",
+            inValue: this.getAttribute("ksInValue") || "",
             inDataListSource: this.getAttribute("ksDataListSource") || "",
             inDataStore: this.dataStore
         });

@@ -41,7 +41,7 @@ const onChangeFunc = ({ inDataListSource, inDataStore, inInputValue,
         inInputValue,
         inDataStore, inDataListSource
     });
-    console.log("localFind : ", localFind);
+    // console.log("localFind : ", localFind);
 
     if (!localFind) return;
 
@@ -85,15 +85,15 @@ export const buildDataListInput = ({
 
     console.log("inDataStore : ", inDataStore);
 
-    input.onChange = (value) => {
-        console.log("value : ", value);
+    input.addEventListener("change", event => {
+        const value = event.target.value;
 
         onChangeFunc({
             inDataListSource, inDataStore,
-            inInputValue: inValue,
-            inCurrentInput: this
+            inInputValue: value,
+            inCurrentInput: input
         });
-    };
+    });
 
     wrapper.append(label, input);
 
