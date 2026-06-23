@@ -1,4 +1,4 @@
-import applyDataListSelection from "./applyDataListSelection.js";
+import applyDataListSelection from "./DataList/applyDataListSelection.js";
 
 const attachDataListChange = ({
     input,
