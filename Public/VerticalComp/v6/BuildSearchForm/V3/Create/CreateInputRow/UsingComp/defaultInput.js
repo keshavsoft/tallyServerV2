@@ -8,8 +8,6 @@ const startFunc = ({
 
     const defaultValue = col in inDefaultRow ? inDefaultRow[col] : "";
 
-    // console.log("caught----------", inDataListFillName);
-
     row.setAttribute("label", inCol.title);
     row.setAttribute("ksName", col);
     row.setAttribute("source", col);
@@ -17,12 +15,9 @@ const startFunc = ({
     if (defaultValue) row.setAttribute("ksInValue", defaultValue);
 
     if ("allowOnChange" in inCol?.verticalConfig) row.setAttribute("ksAllowOnChange", inCol?.verticalConfig?.allowOnChange);
+    if ("onKeyDownType" in inCol?.verticalConfig) row.setAttribute("ksOnKeyDownType", inCol?.verticalConfig?.onKeyDownType);
 
     if (inDataListFillName) row.setAttribute("ksDataListFillName", inDataListFillName);
-
-    // console.log("inCol : ", inCol);
-
-    // allowOnChange
 
     row.dataStore = inDataStore;
 
