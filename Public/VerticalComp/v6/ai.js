@@ -1,5 +1,5 @@
 // ai.js
-import "./components/v3/index.js";
+import "./components/v4/index.js";
 
 import { createState } from "./HtmlState/start.js";
 import { getDomManipulation } from "./DomManipulation/start.js";
