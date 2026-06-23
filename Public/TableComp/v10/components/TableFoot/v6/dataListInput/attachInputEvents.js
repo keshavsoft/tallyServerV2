@@ -6,7 +6,8 @@ const attachInputEvents = ({
     inOnKeyDown,
     inOnKeyDownType,
     inOnChangeFunc,
-    inOnChangeType
+    inOnChangeType, dataListSource,
+    inDataStore
 }) => {
     attachKeyDownEvent({
         input: inInput,
@@ -15,11 +16,13 @@ const attachInputEvents = ({
     });
 
     if (!inOnChangeType) return;
+    // console.log("inDataStore : ", inDataStore);
 
     attachChangeEvent({
         input: inInput,
         onChangeFunc: inOnChangeFunc,
-        onChangeType: inOnChangeType
+        onChangeType: inOnChangeType, dataListSource,
+        inDataStore
     });
 };
 

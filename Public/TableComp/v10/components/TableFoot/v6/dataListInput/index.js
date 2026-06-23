@@ -2,10 +2,11 @@ import getInputOptions from "./getInputOptions.js";
 import applyParentCellStyle from "./applyParentCellStyle.js";
 import createTextInput from "./createTextInput.js";
 import applyDataList from "./applyDataList.js";
+
 import attachInputEvents from "./attachInputEvents.js";
 import renderInput from "./renderInput.js";
 
-class KsTableFooterInput extends HTMLElement {
+class KsTableFooterInputDl extends HTMLElement {
     connectedCallback() {
         const localOptions =
             getInputOptions({
@@ -25,8 +26,8 @@ class KsTableFooterInput extends HTMLElement {
         applyDataList({
             inInput: localInput,
             inName: localOptions.inName,
-            inShowDataList: localOptions.inShowDataList,
-            inColumnsConfig: localOptions.inColumnsConfig
+            inDataListSource: localOptions.inDataListSource,
+            inDataListFillName: localOptions.inDataListFillName
         });
 
         attachInputEvents({
@@ -34,18 +35,25 @@ class KsTableFooterInput extends HTMLElement {
             inOnKeyDown: localOptions.inOnKeyDown,
             inOnKeyDownType: localOptions.inOnKeyDownType,
             inOnChangeFunc: localOptions.inOnChangeFunc,
-            inOnChangeType: localOptions.inOnChangeType
+            inOnChangeType: localOptions.inOnChangeType,
+            inDataStore: localOptions.inDataStore
         });
+
+        // dataListSource,
+        //     dataStore
 
         renderInput({
             inElement: this,
             inInput: localInput
         });
+
     }
 }
 
-if (!customElements.get("ks-table-footer-input")) {
-    customElements.define("ks-table-footer-input", KsTableFooterInput);
-}
+if (!customElements.get("ks-table-footer-input-dl")) {
+    customElements.define("ks-table-footer-input-dl", KsTableFooterInputDl);
+};
 
-export default KsTableFooterInput;
+console.log("KsTableFooterInputDl component loaded to DOM");
+
+export default KsTableFooterInputDl;

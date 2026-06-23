@@ -1,7 +1,7 @@
 // ai.js
 // import "./components/v2/index.js";
 import "./components/TableRow/v1/index.js";
-import "./components/TableFoot/v5/index.js";
+import "./components/TableFoot/v6/index.js";
 
 import { createState } from "./HtmlState/start.js";
 import { getDomManipulation } from "./DomManipulation/start.js";
