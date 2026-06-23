@@ -85,7 +85,12 @@
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "OrigRate",
+                "type": "number"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
@@ -108,7 +113,12 @@
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "OrigAmount",
+                "type": "number"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
@@ -130,7 +140,12 @@
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "RateInc",
+                "type": "number"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
@@ -153,7 +168,12 @@
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "Amount",
+                "type": "number"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,

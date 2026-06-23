@@ -6,14 +6,14 @@ const rateInclusiveFunc = ({
     const closestTr =
         currentInput.closest("fieldset");
 
-    const rate = currentInput.value;
+    const origRateValue = currentInput.value;
     const qty = closestTr.querySelector('[name="Qty"]').value
 
-    closestTr.querySelector('[name="Amount"]').value = (rate * qty).toFixed(2);
+    closestTr.querySelector('[name="OrigAmount"]').value = (origRateValue * qty).toFixed(2);
 
     showCalcMessage({
         input: currentInput,
-        message: `rate change : ${rate}`
+        message: `rate change : ${origRateValue}`
     });
 };
 
