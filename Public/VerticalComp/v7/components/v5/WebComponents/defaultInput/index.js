@@ -16,7 +16,10 @@ class KsDataListInput extends HTMLElement {
             inDataListFillName: this.getAttribute("ksDataListFillName"),
             inAllowOnChange: this.getAttribute("ksAllowOnChange"),
             inOnKeyDownType: this.getAttribute("ksOnKeyDownType"),
-            inType: this.getAttribute("ksType")
+            inType: this.getAttribute("ksType"),
+            inInputClass: this.getAttribute("ksInputClass"),
+            inLabelClass: this.getAttribute("ksLabelClass"),
+            inRowClass: this.getAttribute("ksRowClass")
         });
 
         this.appendChild(wrapper);

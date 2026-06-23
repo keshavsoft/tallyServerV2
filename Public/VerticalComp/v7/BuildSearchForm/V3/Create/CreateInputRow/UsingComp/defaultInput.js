@@ -18,6 +18,9 @@ const startFunc = ({
     if ("onKeyDownType" in inCol?.verticalConfig) row.setAttribute("ksOnKeyDownType", inCol?.verticalConfig?.onKeyDownType);
 
     if ("type" in inCol?.verticalConfig) row.setAttribute("ksType", inCol?.verticalConfig?.type);
+    if ("inputClass" in inCol?.verticalConfig) row.setAttribute("ksInputClass", inCol?.verticalConfig?.inputClass);
+    if ("rowClass" in inCol?.verticalConfig) row.setAttribute("ksRowClass", inCol?.verticalConfig?.rowClass);
+    if ("labelClass" in inCol?.verticalConfig) row.setAttribute("ksLabelClass", inCol?.verticalConfig?.labelClass);
 
     if (inDataListFillName) row.setAttribute("ksDataListFillName", inDataListFillName);
 

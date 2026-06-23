@@ -2,6 +2,7 @@ import attachDataListChange from "./Input/attachDataListChange.js";
 import createInput from "./Input/createInput.js";
 import createLabel from "./Label/createLabel.js";
 import createWrapper from "./createWrapper.js";
+import attachCurrentRowFocus from "./Input/attachCurrentRowFocus.js";
 
 export const buildDataListInput = ({
     inLabel = "",
@@ -22,6 +23,8 @@ export const buildDataListInput = ({
         value: inValue,
         dataListSource: inDataListSource
     });
+
+    attachCurrentRowFocus({ input });
 
     attachDataListChange({
         input,

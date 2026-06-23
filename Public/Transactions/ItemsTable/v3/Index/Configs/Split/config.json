@@ -117,7 +117,8 @@
                 "allowOnChange": true,
                 "onKeyDown": true,
                 "onKeyDownType": "OrigAmount",
-                "type": "number"
+                "type": "number",
+                "inputClass": "flex-1 border rounded px-3 py-2 text-right text-xl"
             },
             "tableConfig": {},
             "isVisible": true,
@@ -172,7 +173,10 @@
                 "allowOnChange": true,
                 "onKeyDown": true,
                 "onKeyDownType": "Amount",
-                "type": "number"
+                "type": "number",
+                "inputClass": "w-56 border rounded px-3 py-2 text-right text-2xl",
+                "labelClass": "w-24 text-2xl font-medium",
+                "rowClass": "flex items-center justify-between"
             },
             "tableConfig": {},
             "isVisible": true,

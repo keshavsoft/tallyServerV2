@@ -1,7 +1,7 @@
-const createLabel = ({ labelText }) => {
+const createLabel = ({ labelText, inLabelClass }) => {
     const label = document.createElement("label");
 
-    label.className = "w-24 text-sm font-medium";
+    label.className = inLabelClass || "w-24 text-sm font-medium";
     label.textContent = labelText;
 
     return label;

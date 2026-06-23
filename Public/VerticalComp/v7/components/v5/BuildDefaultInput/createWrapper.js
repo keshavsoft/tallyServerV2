@@ -1,7 +1,7 @@
-const createWrapper = () => {
+const createWrapper = ({ inRowClass }) => {
     const wrapper = document.createElement("div");
 
-    wrapper.className = "flex items-center space-x-4";
+    wrapper.className = inRowClass || "flex items-center space-x-4";
 
     return wrapper;
 };
