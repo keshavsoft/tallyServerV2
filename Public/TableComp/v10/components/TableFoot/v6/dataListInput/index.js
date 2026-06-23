@@ -1,3 +1,5 @@
+import classFromInputCore from "../inputCore/index.js";
+
 import getInputOptions from "./getInputOptions.js";
 import applyParentCellStyle from "./applyParentCellStyle.js";
 import createTextInput from "./createTextInput.js";
@@ -6,28 +8,17 @@ import applyDataList from "./applyDataList.js";
 import attachInputEvents from "./attachInputEvents.js";
 import renderInput from "./renderInput.js";
 
-class KsTableFooterInputDl extends HTMLElement {
+class KsTableFooterInputDl extends classFromInputCore {
     connectedCallback() {
-        const localOptions =
-            getInputOptions({
-                inElement: this
-            });
+        super.connectedCallback();
 
-        applyParentCellStyle({
-            inElement: this,
-            inRightAlign: localOptions.inRightAlign,
-            inWidth: localOptions.inWidth
-        });
-
-        const localInput =
-            createTextInput(localOptions);
-        // console.log("localInput : ", localInput, localOptions);
+        const localInput = this.querySelector("input");
+        const localOptions = this.localOptions;
 
         applyDataList({
             inInput: localInput,
             inName: localOptions.inName,
-            inDataListSource: localOptions.inDataListSource,
-            inDataListFillName: localOptions.inDataListFillName
+            inDataListSource: localOptions.inDataListSource
         });
 
         attachInputEvents({
@@ -38,9 +29,6 @@ class KsTableFooterInputDl extends HTMLElement {
             inOnChangeType: localOptions.inOnChangeType,
             inDataStore: localOptions.inDataStore
         });
-
-        // dataListSource,
-        //     dataStore
 
         renderInput({
             inElement: this,

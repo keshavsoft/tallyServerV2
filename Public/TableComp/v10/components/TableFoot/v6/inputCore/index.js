@@ -12,6 +12,8 @@ class KsTableFooterInputCore extends HTMLElement {
                 inElement: this
             });
 
+        this.localOptions = localOptions;
+
         applyParentCellStyle({
             inElement: this,
             inRightAlign: localOptions.inRightAlign,
@@ -34,11 +36,5 @@ class KsTableFooterInputCore extends HTMLElement {
 
     }
 }
-
-if (!customElements.get("ks-table-footer-input")) {
-    customElements.define("ks-table-footer-input", KsTableFooterInputCore);
-};
-
-console.log("KsTableFooterInputCore component loaded to DOM");
 
 export default KsTableFooterInputCore;
