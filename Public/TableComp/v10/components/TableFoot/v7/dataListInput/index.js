@@ -1,8 +1,5 @@
 import classFromInputCore from "../inputCore/index.js";
 
-import getInputOptions from "./getInputOptions.js";
-import applyParentCellStyle from "./applyParentCellStyle.js";
-import createTextInput from "./createTextInput.js";
 import applyDataList from "./applyDataList.js";
 
 import attachInputEvents from "./attachInputEvents.js";
