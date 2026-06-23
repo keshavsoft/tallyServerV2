@@ -50,7 +50,7 @@ async function ensureKSComponents() {
 
     tryMenu().then();
     tryNav().then();
-    tryVertical().then();
+    // tryVertical().then();
 };
 
 async function ensureTailwind() {
@@ -432,9 +432,9 @@ async function ensureKSVertical() {
 
     async function tryLocal() {
         try {
-            const fromPromise = await loadScriptAsModule("/VerticalComp/v6/entry.js");
+            const fromPromise = await loadScriptAsModule("/VerticalComp/v7/entry.js");
 
-            console.log("KSVertical loaded from Local Server : VerticalComp/v6");
+            console.log("KSVertical loaded from Local Server : VerticalComp/v7");
 
             if (fromPromise) return true;
         } catch { return false };
