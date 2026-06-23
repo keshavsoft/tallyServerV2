@@ -11,6 +11,48 @@ function loadScriptAsModuleCommon(src) {
     });
 };
 
+async function ensureKSComponents() {
+    async function tryMenu() {
+        try {
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-menuItem/Public/v1/KSMenuItem.js");
+
+            console.log("KSMenuItem loaded from git : ks-web-comp-menuItem-1");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    async function tryNav() {
+        try {
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-nav/Public/v4/ksCompNav.js");
+
+            console.log("ksCompNav loaded from git : ks-web-comp-nav-4");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    async function tryVertical() {
+        try {
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-vertical/Public/v1.3/KSVerticalComp.js");
+
+            console.log("KSVerticalComp loaded from git : ks-web-comp-vertical-4");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    tryMenu().then();
+    tryNav().then();
+    // tryVertical().then();
+};
+
 async function ensureTailwind() {
     function loadCss(href) {
         return new Promise((resolve, reject) => {
@@ -215,7 +257,7 @@ async function ensureKSMenuItem() {
     throw new Error("KSTable could not be loaded");
 };
 
-async function ensureKSComponents() {
+async function ensureKSComponents1() {
     async function tryMenu() {
         try {
             const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-menuItem/Public/v1/KSMenuItem.js");
@@ -390,9 +432,9 @@ async function ensureKSVertical() {
 
     async function tryLocal() {
         try {
-            const fromPromise = await loadScriptAsModule("/TableComp/v4/entry.js");
+            const fromPromise = await loadScriptAsModule("/VerticalComp/v6/entry.js");
 
-            console.log("KSVertical loaded from Local Server : TableComp/v4");
+            console.log("KSVertical loaded from Local Server : VerticalComp/v6");
 
             if (fromPromise) return true;
         } catch { return false };

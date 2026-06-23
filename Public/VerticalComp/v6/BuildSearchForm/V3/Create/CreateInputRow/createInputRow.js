@@ -6,6 +6,7 @@ import { resolveValue } from "./resolveValue.js";
 import { createRowContainer } from "./createRowContainer.js";
 import { attachToInputs } from "./attachToInputs.js";
 import { assembleRow } from "./assembleRow.js";
+import createDataListInput from "./UsingComp/createDataListInput.js";
 
 import { createInput } from "./CreateInput/V2/createInput.js";
 
@@ -87,52 +88,18 @@ const createInputRow = ({
 }) => {
     const col = inCol.columnName;
     const dataListFillName = inCol.dataListFillName;
-    console.log("caught:", inDefaultRow);
+    console.log("caught----------", col);
+
     let row;
 
     if ("verticalConfig" in inCol) {
-        row = document.createElement("ks-datalist-input");
-
-        row.onChange = (value) => {
-            onChangeFunc({
-                inDataListSource, inDataStore,
-                inInputValue: value,
-                inCurrentInput: row
-            });
-        };
-
-        row.setAttribute("label", inCol.title);
-        row.setAttribute("name", col);
-        row.setAttribute("list", `${col}List`);
-        row.setAttribute("source", col);
-        row.setAttribute("ksInValue", inDefaultRow[col]);
-
-        row.dataset.dataListSource = inDataListSource;
-
-        return row;
-
+        console.log("caught----------");
+        return createDataListInput({ inCol, inDefaultRow, inDataListSource, inDataStore });
     } else {
         switch (col) {
             case "LedgerName":
-                row = document.createElement("ks-datalist-input");
+                return createDataListInput({ inCol, inDefaultRow, inDataListSource, inDataStore });
 
-                row.onChange = (value) => {
-                    // console.log("caught:", value);
-                    onChangeFunc({
-                        inDataListSource, inDataStore,
-                        inInputValue: value,
-                        inCurrentInput: row
-                    });
-                };
-
-                row.setAttribute("label", col);
-                row.setAttribute("name", col);
-                row.setAttribute("list", `${col}List`);
-                row.setAttribute("source", col);
-
-                row.dataset.dataListSource = inDataListSource;
-
-                return row;
                 break;
             case "InvoiceDate":
                 row = document.createElement("ks-input");

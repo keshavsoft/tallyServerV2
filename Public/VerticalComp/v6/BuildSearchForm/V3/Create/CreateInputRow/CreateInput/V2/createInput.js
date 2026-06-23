@@ -26,7 +26,7 @@ const createInput = ({
     } else {
 
 
-        console.log("col : ", col);
+        // console.log("col : ", col);
 
         const input = document.createElement("input");
 

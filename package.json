@@ -23,7 +23,7 @@
     "json-crud-cli": "^1.1.2",
     "json-crud-ui-components": "^1.5.1",
     "json-crud-ui-init": "^1.4.1",
-    "json-crud-ui-comp-table": "^",
+    "json-crud-ui-comp-table": "^1.6.7",
     "tailwind-todo": "^1.5.9",
     "tailwind-header-dom": "^5.8.3"
   }

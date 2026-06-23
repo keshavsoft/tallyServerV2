@@ -7,7 +7,7 @@ export const getKSTableConfig = async () => {
     // debugger;
     const configJson = await config.json();
 
-    configJson.callbacks.vertical.onSuccess = onVerticalSuccess;
+    // configJson.callbacks.vertical.onSuccess = onVerticalSuccess;
 
     return configJson;
 };
