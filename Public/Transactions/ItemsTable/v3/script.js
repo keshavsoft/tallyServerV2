@@ -38,9 +38,9 @@ async function ensureKSComponents() {
 
     async function tryVertical() {
         try {
-            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-vertical/Public/v1.3/KSVerticalComp.js");
+            const fromPromise = await loadScriptAsModuleCommon("https://keshavsoft.github.io/ks-web-comp-vertical/Public/v1.4/KSVerticalComp.js");
 
-            console.log("KSVerticalComp loaded from git : ks-web-comp-vertical-4");
+            console.log("KSVerticalComp loaded from git : ks-web-comp-vertical-1.4");
 
             if (fromPromise) return true;
         } catch { return false };
@@ -50,7 +50,7 @@ async function ensureKSComponents() {
 
     tryMenu().then();
     tryNav().then();
-    // tryVertical().then();
+    tryVertical().then();
 };
 
 async function ensureTailwind() {
@@ -420,9 +420,9 @@ async function ensureKSVertical() {
 
     async function tryGitHub() {
         try {
-            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-vertical-dom/Public/v4/ksvertical.js");
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-vertical-dom/Public/v6/ksvertical.js");
 
-            console.log("KSVertical loaded from git : tailwind-vertical-dom");
+            console.log("KSVertical loaded from git : tailwind-vertical-dom v6");
 
             if (fromPromise) return true;
         } catch { return false };
