@@ -13,7 +13,6 @@ const createFooterCell = ({ key, onChangeFunc, showDataList, inColumnsConfig,
     if (inAllowOnChange) {
         localChangeFunc = onChangeFunc;
     };
-    // console.log("inAllowOnChange : ", inAllowOnChange);
 
     const input = inputComponent({
         key, inOnKeyDown, inOnKeyDownType, inDataListSource,

@@ -6,7 +6,21 @@ const createInput = ({
     inOnKeyDownType, showDataList, onChangeFunc, inRightAlign,
     inWidth, inDataListSource, inDataListFillName
 } = {}) => {
-    const input = document.createElement("ks-table-footer-input-dl");
+
+    let input;
+
+    if (inType === "number") {
+        console.log("inType------- : ", inType);
+
+        input = document.createElement("ks-table-footer-input");
+
+    } else {
+
+        input = document.createElement("ks-table-footer-input-dl");
+
+    };
+    // console.log("inType------- : ", inType);
+
 
     input.ksType = inType;
     input.ksPlaceholder = key;
