@@ -9,7 +9,7 @@ const startFunc = ({
     inDefaultRow,
     inShowSerial,
     inShowDataList,
-    inShowSave
+    inShowSave, inDataStore
 }) => {
     const localTr = createFooterRow({
         keys,
@@ -25,7 +25,7 @@ const startFunc = ({
         inShowSave,
         inOnSaveFunc,
         onChangeFunc,
-        inVisibleColumnsConfig
+        inVisibleColumnsConfig, inDataStore
     });
 
     return localTr;

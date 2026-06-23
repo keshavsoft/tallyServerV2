@@ -1,12 +1,12 @@
 const createInput = ({
     inType = "text",
-    key,
+    key, inDataStore,
     className, inputClassName,
     inOnKeyDown, inColumnsConfig, inOnChangeType,
     inOnKeyDownType, showDataList, onChangeFunc, inRightAlign,
-    inWidth
+    inWidth, inDataListSource, inDataListFillName
 } = {}) => {
-    const input = document.createElement("ks-table-footer-input");
+    const input = document.createElement("ks-table-footer-input-dl");
 
     input.ksType = inType;
     input.ksPlaceholder = key;
@@ -14,7 +14,7 @@ const createInput = ({
     input.ksClassName = className;
 
     input.ksInputClassName = inputClassName;
-    
+
     input.ksOnKeyDown = inOnKeyDown;
     input.ksOnKeyDownType = inOnKeyDownType;
     input.ksShowDataList = showDataList;
@@ -25,6 +25,13 @@ const createInput = ({
 
     input.ksRightAlign = inRightAlign;
     input.ksWidth = inWidth;
+    input.dataStore = inDataStore;
+
+    input.setAttribute("ksDataListSource", inDataListSource);
+    input.setAttribute("ksDataListFillName", inDataListFillName);
+
+    // inDataListSource: inElement.getAttribute("ksDataListSource") || "",
+    //         inDataStore: inElement.dataStore,
 
     return input;
 };

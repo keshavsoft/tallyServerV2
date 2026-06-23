@@ -3,8 +3,8 @@ import applyParentCellStyle from "./applyParentCellStyle.js";
 import createTextInput from "./createTextInput.js";
 import applyDataList from "./applyDataList.js";
 
-// import attachInputEvents from "./attachInputEvents.js";
-// import renderInput from "./renderInput.js";
+import attachInputEvents from "./attachInputEvents.js";
+import renderInput from "./renderInput.js";
 
 class KsTableFooterInputDl extends HTMLElement {
     connectedCallback() {
@@ -26,22 +26,26 @@ class KsTableFooterInputDl extends HTMLElement {
         applyDataList({
             inInput: localInput,
             inName: localOptions.inName,
-            inShowDataList: localOptions.inShowDataList,
-            inColumnsConfig: localOptions.inColumnsConfig
+            inDataListSource: localOptions.inDataListSource,
+            inDataListFillName: localOptions.inDataListFillName
         });
 
-        // attachInputEvents({
-        //     inInput: localInput,
-        //     inOnKeyDown: localOptions.inOnKeyDown,
-        //     inOnKeyDownType: localOptions.inOnKeyDownType,
-        //     inOnChangeFunc: localOptions.inOnChangeFunc,
-        //     inOnChangeType: localOptions.inOnChangeType
-        // });
+        attachInputEvents({
+            inInput: localInput,
+            inOnKeyDown: localOptions.inOnKeyDown,
+            inOnKeyDownType: localOptions.inOnKeyDownType,
+            inOnChangeFunc: localOptions.inOnChangeFunc,
+            inOnChangeType: localOptions.inOnChangeType,
+            inDataStore: localOptions.inDataStore
+        });
 
-        // renderInput({
-        //     inElement: this,
-        //     inInput: localInput
-        // });
+        // dataListSource,
+        //     dataStore
+
+        renderInput({
+            inElement: this,
+            inInput: localInput
+        });
 
     }
 }

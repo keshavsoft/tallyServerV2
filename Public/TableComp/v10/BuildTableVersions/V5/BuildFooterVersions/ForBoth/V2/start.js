@@ -52,7 +52,7 @@ const buildFooter = ({ inVisibleColumnsConfig, inDefaultRow, keys,
             inDefaultRow, inShowDataList, keys,
             onChangeFunc: localHandleOnChange,
             inShowSave: oldShowActions, inOnSaveFunc: localHandleSave,
-            inShowSerial: oldShowSerial
+            inShowSerial: oldShowSerial, inDataStore
         });
 
         if (localTr) inTableFooter.appendChild(localTr);

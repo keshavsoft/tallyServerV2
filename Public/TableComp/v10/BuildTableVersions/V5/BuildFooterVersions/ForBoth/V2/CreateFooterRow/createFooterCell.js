@@ -3,7 +3,7 @@ import inputComponent from "./InputComponent/v1/createInput.js";
 const createFooterCell = ({ key, onChangeFunc, showDataList, inColumnsConfig,
     inDefaultValue, inTdClass = "px-4 py-2 border", inAllowOnChange = false, inOnChangeType,
     inOnKeyDown, inOnKeyDownType, inDefaultRow, inType, inRightAlign,
-    inWidth, inputClassName }) => {
+    inWidth, inputClassName, inDataListSource, inDataStore, inDataListFillName }) => {
 
     let localChangeFunc;
 
@@ -13,12 +13,13 @@ const createFooterCell = ({ key, onChangeFunc, showDataList, inColumnsConfig,
     if (inAllowOnChange) {
         localChangeFunc = onChangeFunc;
     };
-    console.log("inAllowOnChange : ", inAllowOnChange);
+    // console.log("inAllowOnChange : ", inAllowOnChange);
 
     const input = inputComponent({
-        key, inOnKeyDown, inOnKeyDownType,
+        key, inOnKeyDown, inOnKeyDownType, inDataListSource,
         showDataList, inColumnsConfig, inDefaultValue, inOnChangeType,
-        inDefaultRow, inType, inRightAlign, inWidth, inputClassName
+        inDefaultRow, inType, inRightAlign, inWidth, inputClassName,
+        inDataStore, inDataListFillName
     });
 
     const div = document.createElement("div");

@@ -1,19 +1,35 @@
+import applyDataListSelection from "./DataList/applyDataListSelection.js";
+
 const attachChangeEvent = ({
     input, onChangeType,
-    onChangeFunc
+    onChangeFunc,
+    dataListSource,
+    inDataStore
 }) => {
-    if (!onChangeFunc) return;
+    // if (!onChangeFunc) return;
 
     input.addEventListener(
         "change",
         (event) => {
             const localCurrentTarget =
                 event.currentTarget;
+            // console.log("localCurrentTarget : ", localCurrentTarget);
+            const value = localCurrentTarget.value;
+            onChangeFunc?.(value);
 
-            onChangeFunc({
-                inCurrentTarget: localCurrentTarget,
-                inChangeType: onChangeType
+            // console.log("localCurrentTarget : ", localCurrlocalCurrentTarget.datasetentTarget.dataset);
+
+            applyDataListSelection({
+                dataListSource: localCurrentTarget.dataset.dataListSource,
+                dataStore: inDataStore,
+                inputValue: value,
+                currentInput: input
             });
+
+            // onChangeFunc({
+            //     inCurrentTarget: localCurrentTarget,
+            //     inChangeType: onChangeType
+            // });
         }
     );
 };

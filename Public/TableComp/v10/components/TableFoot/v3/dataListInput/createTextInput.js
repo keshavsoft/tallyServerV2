@@ -11,6 +11,7 @@ const createTextInput = ({
     localInput.placeholder = inPlaceholder;
     localInput.name = inName;
     localInput.setAttribute("class", inputClassName || inClassName);
+    // localInput.setAttribute("list", "aaaaaaaaaaa");
 
     return localInput;
 };
