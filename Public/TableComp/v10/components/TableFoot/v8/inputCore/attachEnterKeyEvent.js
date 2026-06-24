@@ -13,6 +13,7 @@ const startFunc = (input) => {
         const currentIndex = inputs.indexOf(currentInput);
 
         const nextInput = inputs[currentIndex + 1];
+        console.log("nextInput : ", nextInput);
 
         if (nextInput) {
             nextInput.focus();
