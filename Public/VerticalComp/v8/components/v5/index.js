@@ -1,0 +1,12 @@
+import "./WebComponents/button/index.js";
+
+// import "./WebComponents/dataListInput/index.js";
+// import "./WebComponents/dateInput/index.js";
+
+// import "./WebComponents/input/index.js";
+
+// import "./WebComponents/defaultInput/index.js";
+
+console.log("KSVertical component v6 loaded to DOM");
+
+export default {};

@@ -1,0 +1,31 @@
+import buildDefaultInput from "../../BuildDefaultInput/index.js";
+
+class KsDataListInput extends HTMLElement {
+    connectedCallback() {
+        if (this.dataset.rendered === "true") return;
+
+        this.dataset.rendered = "true";
+
+        const { wrapper } = buildDefaultInput({
+            inLabel: this.getAttribute("label") || "",
+            inName: this.getAttribute("ksName") || "",
+            inValue: this.getAttribute("ksInValue") || "",
+            inDataListSource: this.getAttribute("ksDataListSource") || "",
+            inDataStore: this.dataStore,
+            inOnChange: value => this.onChange?.(value),
+            inDataListFillName: this.getAttribute("ksDataListFillName"),
+            inAllowOnChange: this.getAttribute("ksAllowOnChange"),
+            inOnKeyDownType: this.getAttribute("ksOnKeyDownType"),
+            inType: this.getAttribute("ksType"),
+            inInputClass: this.getAttribute("ksInputClass"),
+            inLabelClass: this.getAttribute("ksLabelClass"),
+            inRowClass: this.getAttribute("ksRowClass")
+        });
+
+        this.appendChild(wrapper);
+    }
+}
+
+customElements.define("ks-input", KsDataListInput);
+
+export default KsDataListInput;
