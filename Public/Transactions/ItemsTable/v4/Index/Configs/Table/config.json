@@ -33,6 +33,18 @@
             "onReadFail": "function"
         }
     },
+    "endPoints": {
+        "create": "/Api/v1/ItemsTable/insertGenPk",
+        "update": "",
+        "delete": "/Api/v1/ItemsTable/del",
+        "read": "/Api/V1/ItemsTable/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {},
+        "dataListEndpoints": {
+            "ItemName": "/Api/v1/StockItems/ShowAll"
+        }
+    },
     "columnsConfig1": [
         {
             "columnName": "ItemName",
@@ -51,28 +63,6 @@
             "onChangeType": "onDataListChange"
         },
         {
-            "columnName": "RateInc",
-            "title": "RateInc",
-            "field": "RateInc",
-            "cellConfig": {
-                "width": "75px",
-                "rightAlign": true,
-                "uiClasses": {
-                    "table": {
-                        "tfoot": {
-                            "inputClass": "w-full border rounded px-2 py-1 text-xl"
-                        }
-                    }
-                }
-            },
-            "isConsider": true,
-            "verticalConfig": {},
-            "tableConfig": {},
-            "isVisible": true,
-            "tableFooterDataListShow": true,
-            "type": "number"
-        },
-        {
             "columnName": "Qty",
             "title": "Qty",
             "field": "Qty",
@@ -88,7 +78,12 @@
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "Qty",
+                "type": "number"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
@@ -98,65 +93,60 @@
             "type": "number"
         },
         {
-            "columnName": "Amount",
-            "title": "Amount",
-            "field": "Amount",
+            "columnName": "OrigRate",
+            "title": "OrigRate",
+            "field": "OrigRate",
             "cellConfig": {
                 "width": "75px",
                 "rightAlign": true,
                 "uiClasses": {
                     "table": {
                         "tfoot": {
-                            "inputClass": "w-full border rounded px-2 py-1 text-lg"
+                            "inputClass": "w-full border rounded px-2 py-1 text-xl"
                         }
                     }
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "OrigRate",
+                "type": "number"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
-            "allowOnChange": true,
-            "onKeyDown": true,
-            "onKeyDownType": "Amount",
-            "type": "number"
+            "type": "number",
+            "dataListFillName": "OrigRate"
         },
         {
-            "field": "pk",
-            "title": "pk",
-            "primary": true,
-            "isVisible": false
-        }
-    ],
-    "endPoints": {
-        "create": "/Api/v1/ItemsTable/insertGenPk",
-        "update": "",
-        "delete": "/Api/v1/ItemsTable/del",
-        "read": "/Api/V1/ItemsTable/ShowAll",
-        "find": "",
-        "filter": "",
-        "dataLists": {},
-        "dataListEndpoints": {
-            "ItemName": "/Api/v1/StockItems/ShowAll"
-        }
-    },
-    "columnsConfig2": [
-        {
-            "columnName": "ItemName",
-            "title": "ItemName",
-            "field": "ItemName",
+            "columnName": "OrigAmount",
+            "title": "OrigAmount",
+            "field": "OrigAmount",
             "cellConfig": {
-                "width": "200px"
+                "width": "75px",
+                "rightAlign": true,
+                "uiClasses": {
+                    "table": {
+                        "tfoot": {
+                            "inputClass": "w-full border rounded px-2 py-1 text-xl"
+                        }
+                    }
+                }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "OrigAmount",
+                "type": "number",
+                "inputClass": "flex-1 border rounded px-3 py-2 text-right text-xl"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
-            "dataListSource": "ItemName.StockItemName",
-            "allowOnChange": true,
-            "onChangeType": "onDataListChange"
+            "type": "number"
         },
         {
             "columnName": "RateInc",
@@ -174,39 +164,17 @@
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
-            "tableConfig": {},
-            "isVisible": true,
-            "tableFooterDataListShow": true,
-            "type": "number"
-        },
-        {
-            "columnName": "Qty",
-            "title": "Qty",
-            "field": "Qty",
-            "cellConfig": {
-                "width": "60px",
-                "rightAlign": true,
-                "uiClasses": {
-                    "table": {
-                        "tfoot": {
-                            "inputClass": "w-full border rounded px-2 py-1 text-xl"
-                        }
-                    }
-                },
-                "tableFooter": {
-                    "showTotal": true
-                }
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "RateInc",
+                "type": "number"
             },
-            "isConsider": true,
-            "verticalConfig": {},
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,
-            "allowOnChange": true,
-            "onKeyDown": true,
-            "onKeyDownType": "Qty",
-            "type": "number"
+            "type": "number",
+            "dataListFillName": "RateInc"
         },
         {
             "columnName": "Amount",
@@ -221,13 +189,18 @@
                             "inputClass": "w-full border rounded px-2 py-1 text-lg"
                         }
                     }
-                },
-                "tableFooter": {
-                    "showTotal": true
                 }
             },
             "isConsider": true,
-            "verticalConfig": {},
+            "verticalConfig": {
+                "allowOnChange": true,
+                "onKeyDown": true,
+                "onKeyDownType": "Amount",
+                "type": "number",
+                "inputClass": "w-56 border rounded px-3 py-2 text-right text-2xl",
+                "labelClass": "w-24 text-2xl font-medium",
+                "rowClass": "flex items-center justify-between"
+            },
             "tableConfig": {},
             "isVisible": true,
             "tableFooterDataListShow": true,

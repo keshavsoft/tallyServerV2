@@ -10,17 +10,10 @@ const createInput = ({
     let input;
 
     if (inType === "number") {
-        console.log("inType------- : ", inType);
-
         input = document.createElement("ks-table-footer-input");
-
     } else {
-
         input = document.createElement("ks-table-footer-input-dl");
-
     };
-    // console.log("inType------- : ", inType);
-
 
     input.ksType = inType;
     input.ksPlaceholder = key;
@@ -30,7 +23,7 @@ const createInput = ({
     input.ksInputClassName = inputClassName;
 
     input.ksOnKeyDown = inOnKeyDown;
-    input.ksOnKeyDownType = inOnKeyDownType;
+    // input.ksOnKeyDownType = inOnKeyDownType;
     input.ksShowDataList = showDataList;
     input.ksInColumnsConfig = inColumnsConfig;
 
@@ -43,9 +36,7 @@ const createInput = ({
 
     input.setAttribute("ksDataListSource", inDataListSource);
     input.setAttribute("ksDataListFillName", inDataListFillName);
-
-    // inDataListSource: inElement.getAttribute("ksDataListSource") || "",
-    //         inDataStore: inElement.dataStore,
+    input.setAttribute("ksOnKeyDownType", inOnKeyDownType);
 
     return input;
 };

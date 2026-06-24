@@ -13,6 +13,8 @@ class KsTableFooterInputCore extends HTMLElement {
                 inElement: this
             });
 
+        console.log("----- : ", localOptions);
+
         this.localOptions = localOptions;
 
         applyParentCellStyle({
@@ -30,35 +32,12 @@ class KsTableFooterInputCore extends HTMLElement {
             inDataListFillName: localOptions.inDataListFillName
         });
 
-
         attachEnterKeyEvent(localInput);
-        
-        localInput.addEventListener("keydown1", (event) => {
-            if (event.key !== "Enter") return;
-
-            event.preventDefault();
-
-            const currentInput = event.currentTarget;
-
-            const tr = currentInput.closest("tr");
-
-            const inputs = [...tr.querySelectorAll("input")];
-
-            const currentIndex = inputs.indexOf(currentInput);
-
-            const nextInput = inputs[currentIndex + 1];
-
-            if (nextInput) {
-                nextInput.focus();
-                nextInput.select();
-            }
-        });
 
         renderInput({
             inElement: this,
             inInput: localInput
         });
-
     }
 }
 

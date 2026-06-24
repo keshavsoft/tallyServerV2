@@ -1,8 +1,11 @@
 import classFromInputCore from "../inputCore/index.js";
+import attachEnterKeyEvent from "./attachEnterKeyEvent.js";
 
 class KsTableFooterInputCore extends classFromInputCore {
     connectedCallback() {
         super.connectedCallback();
+
+        attachEnterKeyEvent(this);
     }
 };
 
