@@ -13,7 +13,7 @@ class KsTableFooterInputCore extends HTMLElement {
                 inElement: this
             });
 
-        console.log("----- : ", localOptions);
+        console.log("------------------ : ", localOptions);
 
         this.localOptions = localOptions;
 
@@ -34,9 +34,15 @@ class KsTableFooterInputCore extends HTMLElement {
 
         attachEnterKeyEvent(localInput);
 
+        this.renderInput({
+            inInput: localInput
+        });
+    }
+
+    renderInput({ inInput }) {
         renderInput({
             inElement: this,
-            inInput: localInput
+            inInput: inInput
         });
     }
 }

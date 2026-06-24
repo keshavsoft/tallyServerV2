@@ -6,6 +6,7 @@ const startFunc = ({
     const col = inCol.columnName;
     let row = document.createElement("ks-input");
 
+
     const defaultValue = col in inDefaultRow ? inDefaultRow[col] : "";
 
     row.setAttribute("label", inCol.title);
@@ -21,7 +22,7 @@ const startFunc = ({
     if ("inputClass" in inCol?.verticalConfig) row.setAttribute("ksInputClass", inCol?.verticalConfig?.inputClass);
     if ("rowClass" in inCol?.verticalConfig) row.setAttribute("ksRowClass", inCol?.verticalConfig?.rowClass);
     if ("labelClass" in inCol?.verticalConfig) row.setAttribute("ksLabelClass", inCol?.verticalConfig?.labelClass);
-
+    // console.log("inCol : ", inCol, row);
     if (inDataListFillName) row.setAttribute("ksDataListFillName", inDataListFillName);
 
     row.dataStore = inDataStore;

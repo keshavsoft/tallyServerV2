@@ -2,10 +2,9 @@ const getInputOptions = ({ inElement }) => {
     const localName =
         inElement.ksName || "";
 
-    // console.log("inElement : ", inElement.getAttribute("ksDataListSource"));
+    console.log("inElement : ", inElement);
 
     return {
-        inType: inElement.ksType || "text",
         inPlaceholder: inElement.ksPlaceholder || "",
         inName: localName,
         inClassName: inElement.ksClassName ||
@@ -22,6 +21,8 @@ const getInputOptions = ({ inElement }) => {
         inDataListSource: inElement.getAttribute("ksDataListSource") || "",
         inDataListFillName: inElement.getAttribute("ksDataListFillName") || "",
         inDataStore: inElement.dataStore,
+        inputClass: inElement.getAttribute("ksInputClass") || "",
+        inType: inElement.getAttribute("ksType") || "text"
     };
 };
 
